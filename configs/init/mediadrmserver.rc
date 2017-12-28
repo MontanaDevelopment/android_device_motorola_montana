@@ -1,0 +1,7 @@
+service mediadrm /system/bin/mediadrmserver
+    class main
+    user media
+    # Motorola IKSWN-3895 mot_drm and mot_tpapi needed for widevine & /dev/qseecom
+    group mediadrm drmrpc mot_drm mot_tpapi
+    ioprio rt 4
+    writepid /dev/cpuset/foreground/tasks

@@ -1,0 +1,11 @@
+on early-init
+    # Create modem FSG mount point
+    mkdir /fsg 755 root root
+
+on fs
+    # use /persist as phony PDS partition
+    symlink /persist /pds
+    # Mount modem FSG partition
+    wait /dev/block/bootdevice/by-name/fsg
+    mount ext4 /dev/block/bootdevice/by-name/fsg /fsg ro nosuid nodev context=u:object_r:fsg_file:s0
+

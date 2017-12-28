@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<rtt>
+    <network numeric="310410"
+             delay_2G="120"
+             delay_3G="100"
+             delay_4G="80">
+    </network>
+    <network numeric="311480"
+             delay_2G="120"
+             delay_3G="100"
+             delay_4G="80">
+    </network>
+</rtt>

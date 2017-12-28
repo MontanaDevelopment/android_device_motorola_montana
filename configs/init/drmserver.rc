@@ -1,0 +1,6 @@
+service drm /system/bin/drmserver
+    class main
+    user drm
+    # Motorola IKSWN-3895 mot_drm and mot_tpapi needed for widevine & /dev/qseecom
+    group drm inet drmrpc readproc mot_drm mot_tpapi
+    writepid /dev/cpuset/foreground/tasks
