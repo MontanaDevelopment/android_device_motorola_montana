@@ -21,3 +21,7 @@ allow init self:netlink_socket { read write getattr connect };
 
 allow init debugfs:file write;
 allow init persist_file:filesystem { getattr mount relabelfrom relabelto };
+
+allow init fsg_file:dir mounton;
+allow init system_file:system module_load;
+

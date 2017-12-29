@@ -320,35 +320,6 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/init/atrace.rc:system/etc/init/atrace.rc \
-    $(LOCAL_PATH)/configs/init/audioserver.rc:system/etc/init/audioserver.rc \
-    $(LOCAL_PATH)/configs/init/bootanim.rc:system/etc/init/bootanim.rc \
-    $(LOCAL_PATH)/configs/init/bootstat.rc:system/etc/init/bootstat.rc \
-    $(LOCAL_PATH)/configs/init/cameraserver.rc:system/etc/init/cameraserver.rc \
-    $(LOCAL_PATH)/configs/init/debuggerd.rc:system/etc/init/debuggerd.rc \
-    $(LOCAL_PATH)/configs/init/drmserver.rc:system/etc/init/drmserver.rc \
-    $(LOCAL_PATH)/configs/init/dumpstate.rc:system/etc/init/dumpstate.rc \
-    $(LOCAL_PATH)/configs/init/gatekeeperd.rc:system/etc/init/gatekeeperd.rc \
-    $(LOCAL_PATH)/configs/init/installd.rc:system/etc/init/installd.rc \
-    $(LOCAL_PATH)/configs/init/keystore.rc:system/etc/init/keystore.rc \
-    $(LOCAL_PATH)/configs/init/lmkd.rc:system/etc/init/lmkd.rc \
-    $(LOCAL_PATH)/configs/init/logd.rc:system/etc/init/logd.rc \
-    $(LOCAL_PATH)/configs/init/mdnsd.rc:system/etc/init/mdnsd.rc \
-    $(LOCAL_PATH)/configs/init/mediacodec.rc:system/etc/init/mediacodec.rc \
-    $(LOCAL_PATH)/configs/init/mediadrmserver.rc:system/etc/init/mediadrmserver.rc \
-    $(LOCAL_PATH)/configs/init/mediaextractor.rc:system/etc/init/mediaextractor.rc \
-    $(LOCAL_PATH)/configs/init/mediaserver.rc:system/etc/init/mediaserver.rc \
-    $(LOCAL_PATH)/configs/init/mtpd.rc:system/etc/init/mtpd.rc \
-    $(LOCAL_PATH)/configs/init/netd.rc:system/etc/init/netd.rc \
-    $(LOCAL_PATH)/configs/init/racoon.rc:system/etc/init/racoon.rc \
-    $(LOCAL_PATH)/configs/init/rild.rc:system/etc/init/rild.rc \
-    $(LOCAL_PATH)/configs/init/servicemanager.rc:system/etc/init/servicemanager.rc \
-    $(LOCAL_PATH)/configs/init/surfaceflinger.rc:system/etc/init/surfaceflinger.rc \
-    $(LOCAL_PATH)/configs/init/uncrypt.rc:system/etc/init/uncrypt.rc \
-    $(LOCAL_PATH)/configs/init/vdc.rc:system/etc/init/vdc.rc \
-    $(LOCAL_PATH)/configs/init/vold.rc:system/etc/init/vold.rc
-    
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola

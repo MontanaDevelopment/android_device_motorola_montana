@@ -14,3 +14,6 @@ allow mmi_boot self:capability dac_override;
 allow mmi_boot sysfs_socinfo:file write;
 
 set_prop(mmi_boot, hw_rev_prop);
+
+allow mmi_boot rootfs:file entrypoint;
+

@@ -1,0 +1,1 @@
+allow netd toolbox_exec:file r_file_perms;
