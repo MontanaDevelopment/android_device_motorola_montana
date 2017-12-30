@@ -1,20 +1,5 @@
-######################################################
-# COPIED FROM MONTANA STOCK
-######################################################
-import /oem/oem.prop persist.lte.pco_supported
-import /oem/oem.prop persist.radio.mode_pref_nv10
-import /oem/oem.prop persist.radio.sib16_support
-import /oem/oem.prop persist.radio.nw_mtu_enabled
-import /oem/oem.prop persist.radio.customer_mbns
-import /oem/oem.prop ro.oem.*
-import /oem/oem.prop oem.*
-import /oem/oem.prop cdma.operator.numeric
-import /oem/oem.prop ro.cdma.home.operator.numeric
-import /oem/oem.prop ro.cdma.home.operator.alpha
-########### COPY OVER ###############################
-
 #
-# system.prop for cedric
+# system.prop for montana
 #
 
 # Android Run Time
@@ -265,9 +250,8 @@ ro.frp.pst=/dev/block/bootdevice/by-name/frp
 persist.radio.app_mbn_path=/fsg
 persist.vold.ecryptfs_supported=true
 ro.hardware.sensors=montana
-#ro.mot.sensors.glance_approach=false
+ro.mot.sensors.glance_approach=false
 persist.sys.media.use-awesome=false
-#mm.enable.qcom_parser=4643
 keyguard.no_require_sim=true
 drm.service.enabled=true
 mdc_initial_max_retry=10
@@ -282,4 +266,11 @@ persist.radio.mcfg_noreset=1
 persist.radio.mcfg_remote=1
 persist.radio.mot_ecc_enabled=1
 persist.radio.mot_ecc_custid=common
-
+ro.usb.bpt=2ec1
+ro.usb.bpt_adb=2ec5
+ro.usb.bpteth=2ec3
+ro.usb.bpteth_adb=2ec6
+ro.usb.mtp=2e82
+ro.usb.mtp_adb=2e76
+ro.usb.ptp=2e83
+ro.usb.ptp_adb=2e84

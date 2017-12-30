@@ -1,1 +1,2 @@
-allow netd toolbox_exec:file r_file_perms;
+# KS addtions
+allow netd toolbox_exec:file {getattr open read execute ioctl execute_no_trans};

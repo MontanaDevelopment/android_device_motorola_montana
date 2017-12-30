@@ -1,2 +1,5 @@
 allow audioserver sensorservice_service:service_manager find;
 
+#Added by KS
+allow audioserver system_server:unix_stream_socket {read write};
+

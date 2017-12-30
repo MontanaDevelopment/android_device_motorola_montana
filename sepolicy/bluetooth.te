@@ -1,0 +1,34 @@
+# Data file accesses.
+allow bluetooth bluetooth_data_file:dir create_dir_perms;
+allow bluetooth bluetooth_data_file:notdevfile_class_set create_file_perms;
+
+allow bluetooth bluetooth_socket:sock_file create_file_perms;
+
+# Device accesses.
+allow bluetooth { tun_device uhid_device hci_attach_dev }:chr_file rw_file_perms;
+
+# sysfs access.
+allow bluetooth sysfs_bluetooth_writable:file rw_file_perms;
+allow bluetooth self:capability net_admin;
+allow bluetooth self:capability2 wake_alarm;
+
+# tethering
+allow bluetooth self:tun_socket create_socket_perms;
+allow bluetooth efs_file:dir search;
+
+# proc access.
+allow bluetooth proc_bluetooth_writable:file rw_file_perms;
+
+# Allow write access to bluetooth specific properties
+allow bluetooth bluetooth_prop:property_service set;
+allow bluetooth pan_result_prop:property_service set;
+allow bluetooth bluetooth_service:service_manager find;
+allow bluetooth keystore_service:service_manager find;
+allow bluetooth radio_service:service_manager find;
+allow bluetooth system_server_service:service_manager find;
+
+# already open bugreport file descriptors may be shared with
+# the bluetooth process, from a file in
+# /data/data/com.android.shell/files/bugreports/bugreport-*.
+allow bluetooth shell_data_file:file read;
+

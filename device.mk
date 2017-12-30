@@ -181,6 +181,16 @@ PRODUCT_PACKAGES += \
     libc2dcolorconvert \
     libmm-omxcore
 
+#PRODUCT_PACKAGES += \
+#    libOmxAacDec \
+#    libOmxAmrwbplusDec \
+#    libOmxCore \
+#    libOmxEvrcDec \
+#    libOmxQcelp13Dec \
+#    libOmxVdec \
+#    libOmxVenc \
+#    libstagefrighthw
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/etc/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/media/etc/media_codecs_8956.xml:system/etc/media_codecs_8956.xml \
@@ -201,7 +211,7 @@ PRODUCT_PACKAGES += \
     
 # Nfc
 PRODUCT_PACKAGES += \
-    libnfc-nci
+    libnfc-nci 
     
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \

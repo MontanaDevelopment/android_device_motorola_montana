@@ -15,5 +15,14 @@ allow mmi_boot sysfs_socinfo:file write;
 
 set_prop(mmi_boot, hw_rev_prop);
 
+# KS additions
 allow mmi_boot rootfs:file entrypoint;
+allow mmi_boot kmsg_device:chr_file rw_file_perms;
+allow mmi_boot proc:file rw_file_perms;
+allow mmi_boot persist_file:dir search;
+allow mmi_boot persist_file:file read;
+allow mmi_boot system_prop:property_service set;
+
+# Not allowed by domain.te
+#allow mmi_boot default_prop:property_service set;
 

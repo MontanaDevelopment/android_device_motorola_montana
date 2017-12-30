@@ -1,0 +1,2 @@
+allow subsystem_ramdump storage_file:dir r_dir_perms;
+allow subsystem_ramdump system_data_file:dir r_dir_perms;

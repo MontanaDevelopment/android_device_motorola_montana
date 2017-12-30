@@ -4,5 +4,5 @@ allow qti_init_shell bluetooth_loader_exec:file { open read };
 allow qti_init_shell hci_attach_dev:chr_file { read write open ioctl };
 allow qti_init_shell sysfs:dir write;
 allow qti_init_shell sysfs_devices_system_cpu:dir write;
-allow qti_init_shell config_bluetooth_exec:file r_file_perms;
+allow qti_init_shell config_bluetooth_exec:file {getattr open read execute ioctl execute_no_trans};
 
