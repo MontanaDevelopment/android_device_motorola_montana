@@ -211,7 +211,8 @@ PRODUCT_PACKAGES += \
     
 # Nfc
 PRODUCT_PACKAGES += \
-    libnfc-nci 
+    libnfc-nci \
+    NfcNci
     
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
