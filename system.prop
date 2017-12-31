@@ -218,14 +218,14 @@ persist.data.mode=concurrent
 persist.data.iwlan.enable=true
 
 # USB
-ro.usb.mtp=0x2e82
-ro.usb.mtp_adb=0x2e76
-ro.usb.ptp=0x2e83
-ro.usb.ptp_adb=0x2e84
-ro.usb.bpt=0x2ee5
-ro.usb.bpt_adb=0x2ee6
-ro.usb.bpteth=0x2ee7
-ro.usb.bpteth_adb=0x2ee8
+#ro.usb.mtp=0x2e82
+#ro.usb.mtp_adb=0x2e76
+#ro.usb.ptp=0x2e83
+#ro.usb.ptp_adb=0x2e84
+#ro.usb.bpt=0x2ee5
+#ro.usb.bpt_adb=0x2ee6
+#ro.usb.bpteth=0x2ee7
+#ro.usb.bpteth_adb=0x2ee8
 
 # Vendor Extension
 ro.vendor.extension_library=libqti-perfd-client.so
@@ -235,7 +235,8 @@ ro.vendor.at_library=libqti-at.so
 #ADB Debug from Recovery
 persist.service.adb.enable=1                                                    
 persist.service.debuggable=1
-persist.sys.usb.config=mtp,adb
+persist.sys.usb.config=adb
+#persist.sys.usb.config mass_storage,adb
 
 ################################################################
 # COPIED FROM MONTANA STOCK
@@ -266,3 +267,12 @@ persist.radio.mcfg_noreset=1
 persist.radio.mcfg_remote=1
 persist.radio.mot_ecc_enabled=1
 persist.radio.mot_ecc_custid=common
+
+ro.usb.bpt=2ec1
+ro.usb.bpt_adb=2ec5
+ro.usb.bpteth=2ec3
+ro.usb.bpteth_adb=2ec6
+ro.usb.mtp=2e82
+ro.usb.mtp_adb=2e76
+ro.usb.ptp=2e83
+ro.usb.ptp_adb=2e84

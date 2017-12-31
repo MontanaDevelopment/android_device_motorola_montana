@@ -1,6 +1,7 @@
 -app/datastatusnotification/datastatusnotification.apk
 -app/TimeService/TimeService.apk
 -app/NfcSetup/NfcSetup.apk
+app/NfcNci/NfcNci.apk
 bin/adsprpcd
 bin/apanic_annotate.sh
 bin/apanic_copy.sh

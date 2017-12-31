@@ -179,17 +179,15 @@ PRODUCT_COPY_FILES += \
 # Media
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
-    libmm-omxcore
-
-#PRODUCT_PACKAGES += \
-#    libOmxAacDec \
-#    libOmxAmrwbplusDec \
-#    libOmxCore \
-#    libOmxEvrcDec \
-#    libOmxQcelp13Dec \
-#    libOmxVdec \
-#    libOmxVenc \
-#    libstagefrighthw
+    libmm-omxcore \
+    libOmxAacDec \
+    libOmxAmrwbplusDec \
+    libOmxCore \
+    libOmxEvrcDec \
+    libOmxQcelp13Dec \
+    libOmxVdec \
+    libOmxVenc \
+    libstagefrighthw
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/etc/media_codecs.xml:system/etc/media_codecs.xml \
@@ -212,7 +210,7 @@ PRODUCT_PACKAGES += \
 # Nfc
 PRODUCT_PACKAGES += \
     libnfc-nci \
-    NfcNci
+    libnfc_nci_jni
     
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
@@ -278,8 +276,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/vhw.xml:system/etc/vhw.xml \
     $(LOCAL_PATH)/configs/rtt-conf.xml:system/etc/rtt-conf.xml \
-    $(LOCAL_PATH)/configs/voicemail-conf.xml:system/etc/voicemail-conf.xml
-
+    $(LOCAL_PATH)/configs/voicemail-conf.xml:system/etc/voicemail-conf.xml \
+    $(LOCAL_PATH)/configs/appops_policy.xml:system/etc/appops_policy.xml \
+    $(LOCAL_PATH)/configs/buffers-conf.xml:system/etc/buffers-conf.xml
 # Ramdisk
 # BIN
 PRODUCT_PACKAGES += \

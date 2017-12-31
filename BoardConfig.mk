@@ -152,6 +152,10 @@ TARGET_PROVIDES_LIBLIGHT := true
 # Media
 TARGET_USES_MEDIA_EXTENSIONS := true
 
+# NFC
+BOARD_HAVE_NFC := true
+BOARD_NFC_CHIPSET := pn544
+
 # Peripheral manager
 TARGET_PER_MGR_ENABLED := true
 
