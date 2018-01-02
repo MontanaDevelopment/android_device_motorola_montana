@@ -1,1 +1,4 @@
 allow zygote self:capability sys_nice;
+
+#KS
+allow zygote system_server:binder { call transfer };

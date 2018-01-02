@@ -26,11 +26,16 @@
 /data/.fps(/.*)?                                         u:object_r:fingerprintd_data_file:s0
 /data/fpc                                                u:object_r:fingerprintd_data_file:s0
 /data/fpc/socket                                         u:object_r:fpc_socket:s0
+#KS
+/data/fpc_images(/.*)?                                   u:object_r:fingerprintd_data_file:s0
+/dev/socket/fpce(/.*)? 				         u:object_r:fpc_socket:s0
 
 /sys/devices/soc/7af8000.spi/spi_master/spi8/spi8.0(/.*)? u:object_r:sysfs_fpc:s0
 
 # mmi_touch related /sys files
 /sys/devices/soc/78b7000\.i2c/i2c-3/3-0020(/.*)?         u:object_r:sysfs_mmi_touch:s0
+#KS
+/sys/devices/soc/78b7000\.i2c/i2c-4/4-0020(/.*)?         u:object_r:sysfs_mmi_touch:s0
 
 # Modem
 /persist/mdm(/.*)?                                       u:object_r:persist_modem_file:s0
@@ -87,7 +92,7 @@
 /dev/fb_quickdraw                                        u:object_r:graphics_fb_device:s0
 
 # NFC
-/dev/bcm2079x-i2c 					u:object_r:nfc_device:s0
+/dev/bcm2079x-i2c					 u:object_r:nfc_device:s0
 
 # Partitions
 /dev/block/bootdevice/by-name/cache                      u:object_r:cache_block_device:s0
@@ -97,6 +102,7 @@
 /dev/block/bootdevice/by-name/persist                    u:object_r:persist_block_device:s0
 /dev/block/bootdevice/by-name/utagsBackup                u:object_r:utags_block_device:s0
 /dev/block/bootdevice/by-name/utags                      u:object_r:utags_block_device:s0
+/dev/block/bootdevice/by-name/userdata 			 u:object_r:userdata_block_device:s0
 
 # RIL
 /data/misc/netmgr(/.*)?                                  u:object_r:netmgr_data_file:s0
