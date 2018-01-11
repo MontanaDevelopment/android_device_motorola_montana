@@ -6,3 +6,4 @@ service ril-daemon /system/bin/rild
     socket cutback stream 660 audioserver radio
     user root
     group radio cache inet misc audio log readproc wakelock qcom_diag net_raw wifi compass diag
+#    writepid /dev/cpuset/system-background/tasks
