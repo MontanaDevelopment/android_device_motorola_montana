@@ -60,7 +60,11 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.print.xml:system/etc/permissions/android.software.print.xml \
     frameworks/native/data/etc/android.software.verified_boot.xml:system/etc/permissions/android.software.verified_boot.xml \
     frameworks/native/data/etc/android.software.webview.xml:system/etc/permissions/android.software.webview.xml \
-    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
+    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
+    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
+    frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
+    frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -117,7 +121,7 @@ PRODUCT_COPY_FILES += \
 
 # CM
 PRODUCT_PACKAGES += \
-    CMActions
+    MotoActions
 
 # Display
 PRODUCT_PACKAGES += \
@@ -155,9 +159,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/etc/xtwifi.conf:system/etc/xtwifi.conf
 
 # IPA Manager
-#PRODUCT_PACKAGES += \
-#    ipacm \
-#    IPACM_cfg.xml
+PRODUCT_PACKAGES += \
+    ipacm \
+    ipacm-diag \
+    IPACM_cfg.xml   
 
 # IMS
 PRODUCT_PACKAGES += \
@@ -208,9 +213,11 @@ PRODUCT_PACKAGES += \
     lights.msm8937
     
 # Nfc
-PRODUCT_PACKAGES += \
-    libnfc-nci \
-    libnfc_nci_jni
+#PRODUCT_PACKAGES += \
+#    nfc_nci.pn54x.default \
+#    NfcNci \
+#    com.android.nfc_extras \
+#    Tag
     
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
@@ -229,7 +236,8 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-lite \
     libprotobuf-cpp-full \
     libcurl \
-    libjson
+    libjson \
+    libcutils
 
 # RIL
 PRODUCT_PACKAGES += \
@@ -329,6 +337,65 @@ PRODUCT_PACKAGES += \
     init.qcom.syspart_fixup.sh \
     init.target.rc \
     ueventd.qcom.rc
+# Init RC files (for which permissions are different when compared to stock)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/init/atrace.rc:system/etc/init/atrace.rc \
+    $(LOCAL_PATH)/configs/init/audioserver.rc:system/etc/init/audioserver.rc \
+    $(LOCAL_PATH)/configs/init/bootanim.rc:system/etc/init/bootanim.rc \
+    $(LOCAL_PATH)/configs/init/drmserver.rc:system/etc/init/drmserver.rc \
+    $(LOCAL_PATH)/configs/init/keystore.rc:system/etc/init/keystore.rc \
+    $(LOCAL_PATH)/configs/init/mediadrmserver.rc:system/etc/init/mediadrmserver.rc \
+    $(LOCAL_PATH)/configs/init/mediaserver.rc:system/etc/init/mediaserver.rc \
+    $(LOCAL_PATH)/configs/init/rild.rc:system/etc/init/rild.rc \
+    $(LOCAL_PATH)/configs/init/surfaceflinger.rc:system/etc/init/surfaceflinger.rc
+
+# Charger images
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_fail.png:root/res/images/charger/battery_fail.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_level_720p_0.png:root/res/images/charger/battery_level_720p_0.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_level_720p_1.png:root/res/images/charger/battery_level_720p_1.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_level_720p_2.png:root/res/images/charger/battery_level_720p_2.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_level_720p_3.png:root/res/images/charger/battery_level_720p_3.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_level_720p_4.png:root/res/images/charger/battery_level_720p_4.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_level_720p_5.png:root/res/images/charger/battery_level_720p_5.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_level_720p_6.png:root/res/images/charger/battery_level_720p_6.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_level_720p_7.png:root/res/images/charger/battery_level_720p_7.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_level_720p_8.png:root/res/images/charger/battery_level_720p_8.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_level_720p_9.png:root/res/images/charger/battery_level_720p_9.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_level_720p_10.png:root/res/images/charger/battery_level_720p_10.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_level_1080p_0.png:root/res/images/charger/battery_level_1080p_0.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_level_1080p_1.png:root/res/images/charger/battery_level_1080p_1.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_level_1080p_2.png:root/res/images/charger/battery_level_1080p_2.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_level_1080p_3.png:root/res/images/charger/battery_level_1080p_3.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_level_1080p_4.png:root/res/images/charger/battery_level_1080p_4.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_level_1080p_5.png:root/res/images/charger/battery_level_1080p_5.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_level_1080p_6.png:root/res/images/charger/battery_level_1080p_6.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_level_1080p_7.png:root/res/images/charger/battery_level_1080p_7.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_level_1080p_8.png:root/res/images/charger/battery_level_1080p_8.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_level_1080p_9.png:root/res/images/charger/battery_level_1080p_9.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_level_1080p_10.png:root/res/images/charger/battery_level_1080p_10.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_num_720p_0.png:root/res/images/charger/battery_num_720p_0.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_num_720p_1.png:root/res/images/charger/battery_num_720p_1.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_num_720p_2.png:root/res/images/charger/battery_num_720p_2.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_num_720p_3.png:root/res/images/charger/battery_num_720p_3.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_num_720p_4.png:root/res/images/charger/battery_num_720p_4.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_num_720p_5.png:root/res/images/charger/battery_num_720p_5.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_num_720p_6.png:root/res/images/charger/battery_num_720p_6.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_num_720p_7.png:root/res/images/charger/battery_num_720p_7.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_num_720p_8.png:root/res/images/charger/battery_num_720p_8.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_num_720p_9.png:root/res/images/charger/battery_num_720p_9.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_num_720p_percent.png:root/res/images/charger/battery_num_720p_percent.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_num_1080p_0.png:root/res/images/charger/battery_num_1080p_0.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_num_1080p_1.png:root/res/images/charger/battery_num_1080p_1.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_num_1080p_2.png:root/res/images/charger/battery_num_1080p_2.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_num_1080p_3.png:root/res/images/charger/battery_num_1080p_3.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_num_1080p_4.png:root/res/images/charger/battery_num_1080p_4.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_num_1080p_5.png:root/res/images/charger/battery_num_1080p_5.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_num_1080p_6.png:root/res/images/charger/battery_num_1080p_6.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_num_1080p_7.png:root/res/images/charger/battery_num_1080p_7.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_num_1080p_8.png:root/res/images/charger/battery_num_1080p_8.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_num_1080p_9.png:root/res/images/charger/battery_num_1080p_9.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_num_1080p_percent.png:root/res/images/charger/battery_num_1080p_percent.png
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
