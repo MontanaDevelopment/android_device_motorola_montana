@@ -7,7 +7,7 @@ import init.mmi.chipset.rc
 # Moto USB configuration
 import init.mmi.usb.rc
 # Moto debugging
-#import init.mmi.debug.rc
+import init.mmi.debug.rc
 
 # Moto VT, the file isn't exit in non VT devices, but that's OK
 import init.mmi.volte.rc
@@ -23,7 +23,7 @@ import init.mmi.nonab.rc
 import init.mmi.sensor.rc
 
 # Moto verified boot extension
-#import init.mmi.hab.rc
+import init.mmi.hab.rc
 
 on early-boot
     write /sys/module/subsystem_restart/parameters/disable_restart_work 0x0
@@ -54,7 +54,7 @@ on post-fs
     mkdir /persist/camera 0755 mot_tcmd mot_tcmd
     mkdir /persist/camera/focus 0775 camera mot_tcmd
     mkdir /persist/camera/ledcal 0775 camera mot_tcmd
-    mkdir /persist/batt_health 0755 mot_pwric mot_pwric 
+    mkdir /persist/batt_health 0755 mot_pwric mot_pwric
     mkdir /persist/mdm 0770 radio radio
     mkdir /persist/factory 0755 mot_tcmd mot_tcmd
     mkdir /persist/factory/audio 0755 mot_tcmd system
@@ -64,7 +64,7 @@ on post-fs
     mkdir /persist/public/atvc 0770 mot_atvc shell
     mkdir /persist/public/battd 0755 mot_accy mot_tcmd
     mkdir /persist/public/att_dm 0775 radio mot_tcmd
-    mkdir /persist/public/hiddenmenu 0775 radio radio
+    mkdir /persist/public/hiddenmenu 0775 radio mot_tcmd
     mkdir /persist/public/hiddenmenu/data 0775 system mot_tcmd
     mkdir /persist/public/locale 0700 system system
     mkdir /persist/public/omadm 0700 radio radio
@@ -84,9 +84,9 @@ on post-fs
     chmod 0664 /persist/bt/bt_bdaddr
 
     # Set life_calls and life_timer file permissions
-    chown radio radio /persist/public/hiddenmenu/life_calls
+    chown radio mot_tcmd /persist/public/hiddenmenu/life_calls
     chmod 0775 /persist/public/hiddenmenu/life_calls
-    chown radio radio /persist/public/hiddenmenu/life_timer
+    chown radio mot_tcmd /persist/public/hiddenmenu/life_timer
     chmod 0775 /persist/public/hiddenmenu/life_timer
 
     swapon_all fstab.qcom
@@ -239,23 +239,27 @@ on boot
    write /sys/module/binder/parameters/debug_mask 0x5
 
 # Pass carrier to wlan
+on property:ro.carrier=*
+    start init_wifi
+
 service init_wifi /system/bin/wlan_carrier_bin.sh
     class main
     user root
     group root
     oneshot
+    disabled
 
-#service mmi-block-perm /init.mmi.block_perm.sh
-#    seclabel u:r:init_block_perm:s0
-#    class main
-#    user root
-#    oneshot
+service mmi-block-perm /init.mmi.block_perm.sh
+    seclabel u:r:init_block_perm:s0
+    class main
+    user root
+    oneshot
 
-#on nonencrypted
-#    setprop ro.kick.logcopy ${ro.bootreason}
+on nonencrypted
+    setprop ro.kick.logcopy ${ro.bootreason}
 
-#on property:vold.decrypt=trigger_restart_framework
-#    setprop ro.kick.logcopy ${ro.bootreason}
+on property:vold.decrypt=trigger_restart_framework
+    setprop ro.kick.logcopy ${ro.bootreason}
 
 service pstore_annotate /system/bin/pstore_annotate.sh build
     class main
@@ -304,17 +308,17 @@ service tcmdhelp /system/bin/tcmdhelp
     oneshot
     disabled
 
-#service ftmipcd /system/bin/ftmipcd
-#    user radio
-#    group radio net_raw inet qcom_diag
-#    disabled
-#    oneshot
+service ftmipcd /system/bin/ftmipcd
+    user radio
+    group radio net_raw inet qcom_diag
+    disabled
+    oneshot
 
-#on property:ro.bootmode=factory
-#    start ftmipcd
+on property:ro.bootmode=factory
+    start ftmipcd
 
-#on property:ro.bootmode=mot-factory
-#    start ftmipcd
+on property:ro.bootmode=mot-factory
+    start ftmipcd
 
 on property:ro.boot.dualsim=true
    setprop persist.radio.multisim.config dsds

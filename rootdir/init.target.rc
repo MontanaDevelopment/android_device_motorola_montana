@@ -45,13 +45,6 @@ on fs
     # these partition flashed on the device. Failure to mount any partition in fstab file
     # results in failure to launch late-start class.
 
-    #wait /dev/block/bootdevice/by-name/persist
-    #mkdir /persist/data 0700  system system
-    #restorecon_recursive   /persist
-
-    #wait /dev/block/bootdevice/by-name/dsp
-    #restorecon_recursive   /dsp
-
     wait /dev/block/bootdevice/by-name/persist
     mount ext4 /dev/block/bootdevice/by-name/persist /persist nosuid nodev barrier=1 defcontext=u:object_r:persist_file:s0
     mkdir /persist/data 0700  system system
@@ -63,6 +56,10 @@ on fs
 
     wait /dev/block/bootdevice/by-name/modem
     mount ext4 /dev/block/bootdevice/by-name/modem /firmware ro nosuid nodev context=u:object_r:firmware_file:s0
+    #write /sys/kernel/boot_adsp/boot 1
+
+    #wait /dev/block/bootdevice/by-name/oem
+    #mount ext4 /dev/block/bootdevice/by-name/oem /oem ro nosuid nodev barrier=1
 
 on post-fs-data
     mkdir /data/tombstones 0771 system system
@@ -84,6 +81,11 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
 on init
    write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
+#service qfp-daemon /system/bin/qfp-daemon
+#   class late_start
+#   user system
+#   group system drmrpc
+
 # Allow usb charging to be disabled peristently
 on property:persist.usb.chgdisabled=1
     write /sys/class/power_supply/battery/charging_enabled 0
@@ -91,19 +93,46 @@ on property:persist.usb.chgdisabled=1
 on property:persist.usb.chgdisabled=0
     write /sys/class/power_supply/battery/charging_enabled 1
 
+#service qrngd /system/bin/qrngd -f
+#   class main
+#   user root
+#   group root
+
+#service qrngp /system/bin/qrngp -f
+#   class main
+#   user root
+#   group root
+#   oneshot
+#   disabled
+
+#on property:sys.boot_completed=1
+#   start qrngp
+
 service qseecomd /system/bin/qseecomd
    class core
    user root
    group root
-   writepid /dev/cpuset/system-background/tasks
+
+#service aostlmd /system/bin/aostlmd
+#   class late_start
+#   user system
+#   group system
+
+#service mpdecision /system/bin/mpdecision --avg_comp
+#   user root
+#   disabled
 
 service perfd /system/vendor/bin/perfd
    class main
    user root
-   group root readproc
    disabled
-   socket perfd seqpacket 0666 root system
-   writepid /dev/cpuset/system-background/tasks
+
+#service gamed /system/vendor/bin/gamed
+#   class main
+#   user system
+#   group system
+#   disabled
+#   socket gamed seqpacket 0640 system system
 
 service thermal-engine /system/vendor/bin/thermal-engine
    class main
@@ -112,7 +141,6 @@ service thermal-engine /system/vendor/bin/thermal-engine
    socket thermal-recv-client stream 0660 system system
    socket thermal-recv-passive-client stream 0666 system system
    group root
-   writepid /dev/cpuset/system-background/tasks
 
 service audiod /system/bin/audiod
    class late_start
@@ -124,8 +152,7 @@ on boot
 
     start rmt_storage
     insmod /system/lib/modules/adsprpc.ko
-    
-    # access permission for secure touch
+# access permission for secure touch
     chmod 0660 /sys/devices/soc/78b7000.i2c/i2c-3/3-0020/input/input0/secure_touch_enable
     chmod 0440 /sys/devices/soc/78b7000.i2c/i2c-3/3-0020/input/input0/secure_touch
     chmod 0660 /sys/devices/soc/78b8000.i2c/i2c-4/4-0020/input/input0/secure_touch_enable
@@ -255,8 +282,7 @@ service per_proxy /system/bin/pm-proxy
     user system
     group system
     disabled
-    writepid /dev/cpuset/system-background/tasks
-    
+
 on property:init.svc.per_mgr=running
     start per_proxy
 
