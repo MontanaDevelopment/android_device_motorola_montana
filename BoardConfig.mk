@@ -100,8 +100,8 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_NO_CHARGER_LED := true
 
 # CMHW
-BOARD_USES_CYANOGEN_HARDWARE := true
-BOARD_HARDWARE_CLASS += $(DEVICE_PATH)/cmhw
+#BOARD_USES_CYANOGEN_HARDWARE := true
+#BOARD_HARDWARE_CLASS += $(DEVICE_PATH)/cmhw
 
 # CNE / DPM
 BOARD_USES_QCNE := true
@@ -153,8 +153,8 @@ TARGET_PROVIDES_LIBLIGHT := true
 TARGET_USES_MEDIA_EXTENSIONS := true
 
 # NFC
-BOARD_HAVE_NFC := true
-BOARD_NFC_CHIPSET := pn544
+#BOARD_HAVE_NFC := true
+#BOARD_NFC_CHIPSET := pn544
 
 # Peripheral manager
 TARGET_PER_MGR_ENABLED := true
@@ -176,8 +176,8 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # RIL
-BOARD_PROVIDES_RILD := true
-BOARD_PROVIDES_LIBRIL := true
+#BOARD_PROVIDES_RILD := true
+#BOARD_PROVIDES_LIBRIL := true
 ### --- We can use CAF instead of above 2 settings.
 ### --- But in that case libril.so should be removed
 ### --- from properiatery-files.txt in device directory
