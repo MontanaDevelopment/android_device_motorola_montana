@@ -25,3 +25,4 @@
         android:icon="@drawable/ic_settings_fingerprint" />
 
 </PreferenceScreen>
+

@@ -37,7 +37,7 @@
                 android:targetPackage="com.cyanogenmod.settings.device"
                 android:targetClass="com.cyanogenmod.settings.device.DozeSettings" />
     </PreferenceScreen>
-    <!--    
+    
     <PreferenceScreen
         android:key="fp_gestures"
         android:title="@string/fingerprint_gestures_title"
@@ -47,7 +47,7 @@
                 android:targetPackage="com.cyanogenmod.settings.device"
                 android:targetClass="com.cyanogenmod.settings.device.FPGestureSettings" />
     </PreferenceScreen>
-    -->    
+    
     <PreferenceScreen
         android:key="screen_off_gestures"
         android:title="@string/screen_off_gestures_title"

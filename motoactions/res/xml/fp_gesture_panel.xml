@@ -163,5 +163,5 @@
             android:entryValues="@array/fp_keys_screen_off_listValues" />
 
     </PreferenceCategory>
-
 </PreferenceScreen>
+
