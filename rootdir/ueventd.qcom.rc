@@ -328,6 +328,7 @@
 
 # RAW device
 /dev/gbraw*             0660   root   mot_mod
+
 # Audio device
 /sys/devices/platform/mods_codec.0 uevent 0660 root mot_mod
 /sys/devices/platform/mods_codec.0/* uevent 0660 root mot_mod
