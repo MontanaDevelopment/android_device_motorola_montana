@@ -22,6 +22,11 @@ BOARD_VENDOR := motorola-qcom
 
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
+# Product model specific configuration
+include $(DEVICE_PATH)/ModelConfig.mk
+
+#WITH_DEXPREOPT := true
+
 # Platform
 TARGET_BOARD_PLATFORM := msm8937
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno505
@@ -103,6 +108,9 @@ BOARD_NO_CHARGER_LED := true
 #BOARD_USES_CYANOGEN_HARDWARE := true
 #BOARD_HARDWARE_CLASS += $(DEVICE_PATH)/cmhw
 
+# DT2W
+TARGET_TAP_TO_WAKE_NODE := "/sys/android_touch/doubletap2wake"
+
 # CNE / DPM
 BOARD_USES_QCNE := true
 
@@ -153,8 +161,9 @@ TARGET_PROVIDES_LIBLIGHT := true
 TARGET_USES_MEDIA_EXTENSIONS := true
 
 # NFC
-#BOARD_HAVE_NFC := true
-#BOARD_NFC_CHIPSET := pn544
+ifeq ($(BOARD_HAVE_NFC_CHIPSET),yes)
+NXP_CHIP_TYPE := 2
+endif
 
 # Peripheral manager
 TARGET_PER_MGR_ENABLED := true
