@@ -22,6 +22,9 @@ $(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk
 # Call the proprietary setup
 $(call inherit-product, vendor/motorola/montana/montana-vendor.mk)
 
+# Product model specific configuration
+include $(LOCAL_PATH)/ModelConfig.mk
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
@@ -60,23 +63,25 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.print.xml:system/etc/permissions/android.software.print.xml \
     frameworks/native/data/etc/android.software.verified_boot.xml:system/etc/permissions/android.software.verified_boot.xml \
     frameworks/native/data/etc/android.software.webview.xml:system/etc/permissions/android.software.webview.xml \
-    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
-    frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
-    frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml
+    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
 # Audio
 PRODUCT_PACKAGES += \
+    audiod \
     audio.primary.msm8937 \
     audio.usb.default \
     audio.a2dp.default \
     audio.r_submix.default \
-    libshim_adsp
+    libaudioresampler \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
+    libmmieffectswrapper \
+    libspeakerbundle \
+    libshim_adsp \
+    tinymix
     
 PRODUCT_COPY_FILES += \
     hardware/qcom/audio-caf/msm8996/configs/msm8937/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt \
-    $(LOCAL_PATH)/configs/audio/audio_effects.conf:system/etc/audio_effects.conf \
     $(LOCAL_PATH)/configs/audio/audio_ext_spkr.conf:system/etc/audio_ext_spkr.conf \
     $(LOCAL_PATH)/configs/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml \
     $(LOCAL_PATH)/configs/audio/audio_platform_info_extcodec.xml:system/etc/audio_platform_info_extcodec.xml \
@@ -213,15 +218,28 @@ PRODUCT_PACKAGES += \
     lights.msm8937
     
 # Nfc
-#PRODUCT_PACKAGES += \
-#    nfc_nci.pn54x.default \
-#    NfcNci \
-#    com.android.nfc_extras \
-#    Tag
-    
+ifeq ($(BOARD_HAVE_NFC_CHIPSET),yes)
+PRODUCT_PACKAGES += \
+    libnfc-nci \
+    libnfc_nci_jni \
+    nfc_nci.pn54x.default \
+    NfcNci \
+    com.android.nfc_extras \
+    Tag
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     $(LOCAL_PATH)/configs/nfc/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
+    frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
+    frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/nfc/app/NfcSetup/NfcSetup.apk:system/app/NfcSetup/NfcSetup.apk
+endif
 
 # Power
 PRODUCT_PACKAGES += \
@@ -237,7 +255,8 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     libcurl \
     libjson \
-    libcutils
+    libcutils \
+    libion
 
 # RIL
 PRODUCT_PACKAGES += \

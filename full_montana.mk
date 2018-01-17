@@ -14,12 +14,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+#
+LOCAL_PATH := device/motorola/montana
+
+# Inherit from montana device specific
+$(call inherit-product, $(LOCAL_PATH)/device_custom.mk)
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from montana device
-$(call inherit-product, device/motorola/montana/device.mk)
+# Inherit from montana device common
+$(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := montana
