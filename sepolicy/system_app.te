@@ -1,11 +1,7 @@
-################ Was there already ####################
 allow system_app sysfs_homebutton:dir r_dir_perms;
 allow system_app sysfs_homebutton:file rw_file_perms;
 allow system_app fingerprintd:binder call;
 allow system_app fingerprintd_data_file:dir search;
-#######################################################
-
-# Added by KS
 
 # Perform binder IPC to any app domain.
 binder_call(system_app, appdomain)
