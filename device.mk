@@ -22,9 +22,6 @@ $(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk
 # Call the proprietary setup
 $(call inherit-product, vendor/motorola/montana/montana-vendor.mk)
 
-# Product model specific configuration
-include $(LOCAL_PATH)/ModelConfig.mk
-
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
@@ -218,7 +215,6 @@ PRODUCT_PACKAGES += \
     lights.msm8937
     
 # Nfc
-ifeq ($(BOARD_HAVE_NFC_CHIPSET),yes)
 PRODUCT_PACKAGES += \
     libnfc-nci \
     libnfc_nci_jni \
@@ -229,17 +225,14 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
-    $(LOCAL_PATH)/configs/nfc/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf
+    $(LOCAL_PATH)/configs/nfc/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
+    $(LOCAL_PATH)/configs/nfc/etc/libnfc-nxp_ds.conf:system/etc/libnfc-nxp_ds.conf
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
     frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/nfc/app/NfcSetup/NfcSetup.apk:system/app/NfcSetup/NfcSetup.apk
-endif
 
 # Power
 PRODUCT_PACKAGES += \
