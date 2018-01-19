@@ -15,7 +15,7 @@
 import re
 
 def FullOTA_InstallEnd(info):
-  info.script.AppendExtra('if (getprop("ro.boot.radio") != "emea") then')
+  info.script.AppendExtra('if (getprop("ro.boot.radio") != "EMEA") then')
   info.script.Print("Non-EMEA variant detected !!!")
   info.script.Print("Disabling NFC configuration...")
   info.script.Print("Credits to Kalyansundhar, GoldeneyeS2")
