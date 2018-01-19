@@ -1,1 +1,0 @@
-BOARD_HAVE_NFC_CHIPSET = yes
