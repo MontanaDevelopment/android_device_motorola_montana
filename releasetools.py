@@ -18,6 +18,7 @@ def FullOTA_InstallEnd(info):
   info.script.AppendExtra('if (getprop("ro.boot.radio") != "emea") then')
   info.script.Print("Non-EMEA variant detected !!!")
   info.script.Print("Disabling NFC configuration...")
+  info.script.Print("Credits to Kalyansundhar, GoldeneyeS2")
   info.script.Mount("/system")
   info.script.AppendExtra('delete_recursive("/system/app/NfcSetup");')
   info.script.AppendExtra('delete_recursive("/system/app/NfcNci");')
