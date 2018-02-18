@@ -222,6 +222,7 @@ ro.config.swap=true
 
 #force HAL1 for below packages
 camera.hal1.packagelist=com.skype.raider,com.google.android.talk
+persist.camera.HAL3.enabled=1
 
 #properties for limiting preview size in camera
 camera.display.umax=1920x1080
@@ -270,6 +271,7 @@ persist.qcril_uim_vcc_feature=1
 persist.dpm.feature=0
 persist.vold.ecryptfs_supported=true
 persist.sys.dalvik.vm.lib.2=libart.so
+qemu.hw.mainkeys=1
 
 #ADB Debug from Recovery
 persist.service.adb.enable=1                                                    
