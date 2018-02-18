@@ -325,7 +325,6 @@ etc/permissions/protobufs-2.3.0.xml
 etc/permissions/qcrilhook.xml
 etc/permissions/qti_permissions.xml
 etc/permissions/qti-vzw-ims-internal.xml
-etc/permissions/rcscommon.xml
 etc/permissions/rcs_service_aidl.xml
 etc/permissions/rcs_service_api.xml
 etc/qca6234-service.sh
@@ -354,7 +353,6 @@ framework/com.qti.location.sdk.jar
 -framework/qmapbridge.jar
 -framework/QPerformance.jar
 -framework/qti-telephony-common.jar
--framework/rcscommon.jar
 -framework/rcsimssettings.jar
 -framework/rcs_service_aidl.jar
 -framework/rcs_service_api.jar
