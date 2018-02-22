@@ -274,7 +274,7 @@ persist.sys.dalvik.vm.lib.2=libart.so
 qemu.hw.mainkeys=1
 
 #ADB Debug from Recovery
-persist.service.adb.enable=1                                                    
-persist.service.debuggable=1
-persist.sys.usb.config=adb
-#persist.sys.usb.config mass_storage,adb
+#persist.service.adb.enable=1                                                  
+#persist.service.debuggable=1
+#persist.sys.usb.config=adb
+persist.sys.usb.config mtp,adb
