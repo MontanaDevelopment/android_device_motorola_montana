@@ -22,7 +22,11 @@ BOARD_VENDOR := motorola-qcom
 
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
-#WITH_DEXPREOPT := true
+# Enable dexpreopt to speed boot time
+WITH_DEXPREOPT := true
+WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
+DONT_DEXPREOPT_PREBUILTS := true
+WITH_DEXPREOPT_PIC := true
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8937
