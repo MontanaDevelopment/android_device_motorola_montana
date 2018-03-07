@@ -1,6 +1,6 @@
 -app/datastatusnotification/datastatusnotification.apk
 -app/TimeService/TimeService.apk
-app/NfcSetup/NfcSetup.apk
+-app/NfcSetup/NfcSetup.apk
 bin/adsprpcd
 bin/apanic_annotate.sh
 bin/apanic_copy.sh
@@ -329,7 +329,6 @@ etc/permissions/rcs_service_aidl.xml
 etc/permissions/rcs_service_api.xml
 etc/qca6234-service.sh
 etc/qewl.jar
-etc/recovery-resource.dat
 framework/com.motorola.android.dropboxhelper.jar
 framework/com.motorola.android.settings.shared.jar
 framework/com.motorola.camerabgproc.jar

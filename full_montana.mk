@@ -30,4 +30,10 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 PRODUCT_DEVICE := montana
 PRODUCT_NAME := full_montana
 PRODUCT_MODEL := Moto G5s
-PRODUCT_MANUFACTURER := motorola
+PRODUCT_MANUFACTURER := Motorola
+PRODUCT_BRAND := Motorola
+PRODUCT_RELEASE_NAME := montana
+
+#PRODUCT_BUILD_PROP_OVERRIDES += \
+    BUILD_FINGERPRINT=motorola/montana/montana:7.1.1/NPS26.116-26/30:user/release-keys \
+    PRIVATE_BUILD_DESC="montana-7.1.1/NPS26.116-26/30:user/release-keys"
