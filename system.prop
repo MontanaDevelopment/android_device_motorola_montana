@@ -176,7 +176,7 @@ ro.vendor.gt_library=libqti-gt.so
 ro.core_ctl_min_cpu=2
 ro.core_ctl_max_cpu=4
 ro.config.max_starting_bg=8
-#ro.sf.lcd_density=390
+ro.sf.lcd_density=390
 ro.fm.transmitter=false
 vidc.enc.narrow.searchrange=1
 
@@ -271,7 +271,7 @@ persist.qcril_uim_vcc_feature=1
 persist.dpm.feature=0
 persist.vold.ecryptfs_supported=true
 persist.sys.dalvik.vm.lib.2=libart.so
-qemu.hw.mainkeys=1
+#qemu.hw.mainkeys=1
 
 #ADB Debug from Recovery
 #persist.service.adb.enable=1                                                  
