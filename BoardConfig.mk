@@ -228,6 +228,9 @@ PRODUCT_FULL_TREBLE_OVERRIDE := true
 # Vendor security patch level
 VENDOR_SECURITY_PATCH := 2019-02-01
 
+# VNDK
+BOARD_VNDK_VERSION := current
+
 # Wi-Fi
 BOARD_HAS_QCOM_WLAN := true
 BOARD_WLAN_DEVICE := qcwcn
