@@ -83,7 +83,7 @@ TARGET_NO_BOOTLOADER := true
 
 # Camera
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
-    /system/vendor/bin/mm-qcamera-daemon=27
+    /vendor/bin/mm-qcamera-daemon=27
 USE_DEVICE_SPECIFIC_CAMERA := true
 BOARD_QTI_CAMERA_32BIT_ONLY := true
 
@@ -177,6 +177,9 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16879616    #    16484 * 1024 mmcblk0p38
 BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456      #   262144 * 1024 mmcblk0p52
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3623878656    #  3538944 * 1024 mmcblk0p53
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 26403126272 # 25784303 * 1024 mmcblk0p54
+BOARD_VENDORIMAGE_PARTITION_SIZE := 687865856
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+TARGET_COPY_OUT_VENDOR := vendor
 TARGET_EXFAT_DRIVER := exfat
 PRODUCT_VENDOR_MOVE_ENABLED := true
 
@@ -205,15 +208,15 @@ TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
-    /system/vendor/bin/adspd|libshim_adsp.so \
-    /system/vendor/lib/libmot_gpu_mapper.so|libgpu_mapper_shim.so \
+    /vendor/bin/adspd|libshim_adsp.so \
+    /vendor/lib/libmot_gpu_mapper.so|libgpu_mapper_shim.so \
     /system/lib/libjustshoot.so|libjustshoot_shim.so \
-    /system/vendor/lib/libjustshoot.so|libjustshoot_shim.so \
-    /system/vendor/lib64/libmdmcutback.so|libqsap_shim.so
+    /vendor/lib/libjustshoot.so|libjustshoot_shim.so \
+    /vendor/lib64/libmdmcutback.so|libqsap_shim.so
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
@@ -222,6 +225,9 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Thermal
 USE_DEVICE_SPECIFIC_THERMAL := true
+
+# Treble
+PRODUCT_FULL_TREBLE_OVERRIDE := true
 
 # Vendor security patch level
 VENDOR_SECURITY_PATCH := 2019-02-01
