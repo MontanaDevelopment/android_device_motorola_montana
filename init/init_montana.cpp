@@ -89,6 +89,12 @@ void vendor_load_properties()
     if (platform != ANDROID_TARGET)
         return;
 
+    // camera (treble)
+    property_override("ro.product.manufacturer", "motorola");
+    property_override("ro.build.product", "montana");
+    property_override("ro.product.device", "montana");
+    property_override("ro.product.name", "montana_retail");
+
     // sku
     std::string sku = "Moto G5S (";
     sku.append(android::base::GetProperty("ro.boot.hardware.sku", ""));
