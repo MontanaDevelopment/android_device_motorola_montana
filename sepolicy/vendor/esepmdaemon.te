@@ -1,1 +1,1 @@
-binder_call(esepmdaemon, servicemanager);
+# binder_call(esepmdaemon, servicemanager);
