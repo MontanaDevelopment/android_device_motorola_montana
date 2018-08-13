@@ -1,13 +1,12 @@
 #!/bin/bash
 #
-# Copyright (C) 2016 The CyanogenMod Project
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2017 The LineageOS Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+# http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -17,10 +16,6 @@
 #
 
 set -e
-
-# Required!
-DEVICE=potter
-VENDOR=motorola
 
 INITIAL_COPYRIGHT_YEAR=2017
 
@@ -37,14 +32,17 @@ if [ ! -f "$HELPER" ]; then
 fi
 . "$HELPER"
 
-# Initialize the helper for device
-setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" true
+# Initialize the helper
+setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true
 
 # Copyright headers and guards
-write_headers "potter"
+write_headers "potter cedric sanders montana"
 
 # The standard blobs
 write_makefiles "$MY_DIR"/proprietary-files.txt
+
+# ARM64 blobs
+write_makefiles "$MY_DIR"/proprietary-files64.txt
 
 # We are done!
 write_footers

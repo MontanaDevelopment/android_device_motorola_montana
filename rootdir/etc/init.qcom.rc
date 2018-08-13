@@ -27,6 +27,9 @@
 
 import /system/vendor/etc/init/hw/init.mmi.rc
 
+# Device specific configuration
+import /system/vendor/etc/init/hw/init.qcom_device.rc
+
 on early-init
     mount debugfs debugfs /sys/kernel/debug
     chmod 0755 /sys/kernel/debug
@@ -572,13 +575,6 @@ service adsprpcd /system/vendor/bin/adsprpcd
     class main
     user media
     group media
-
-# Start AKM executable
-service ecompassd /system/vendor/bin/akmd09912
-    class main
-    user compass
-    group compass misc input
-    disabled
 
 service energy-awareness /system/vendor/bin/energy-awareness
     class main

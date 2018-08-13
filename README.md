@@ -1,23 +1,21 @@
-Device Tree for Moto G5 Plus (potter)
+Device Tree for the Moto G5(s) Lineup
 ===========================================
 
-The Motorola Moto G5 Plus (codenamed _"potter"_) is a mid-range smartphone from Motorola mobility.
-It was announced on February 2017.
+The Motorola Moto G5(s) is a mid-range smartphone lineup from Motorola mobility.
+The G5 line was announced on February 2017 and the G5S line was announced on August.
 
 Basic   | Spec Sheet
 -------:|:-------------------------
-CPU     | Octa-core 2.0 GHz Cortex-A53
-Chipset | Qualcomm MSM8953 Snapdragon 625
-GPU     | Adreno 506
-Memory  | 4 GB RAM
-Shipped Android Version | 7.0.0
-Storage | 32 GB
+CPU     | Octa-core 2.0 GHz or 1.4 GHz Cortex-A53
+Chipset | Qualcomm MSM8953 Snapdragon 625 or Qualcomm MSM8937 Snapdragon 430
+GPU     | Adreno 506 or Adreno 505
+Memory  | 2,3 or 4 GB RAM
+Shipped Android Version | 7.0.0 or 7.1.0
+Storage | 16GB, 32 GB or 64GB
 MicroSD | Up to 256 GB
-Battery | Li-Ion 3000mAh battery
-Display | 1080 x 1920 pixels, 5.2 inches (~402 ppi pixel density)
-Rear Camera  | 12 MP, f/1.7, 4032 x 3024 pixels, Dual Pixel Autofocus, dual flash LED
-Front Camera  |  5 MP, f/2.2, 2592 x 1944 pixels
+Battery | Various
+Display | 1080 x 1920 pixels, various densities
+Rear Camera  | Various
+Front Camera  |  Various
 
-Copyright 2017 - The LineageOS Project.
-
-![Moto G5 Plus](http://cdn2.gsmarena.com/vv/pics/motorola/motorola-moto-g5-plus-1.jpg "Moto G5 Plus")
+Copyright 2017-2018 - The LineageOS Project.

@@ -79,10 +79,6 @@ void vendor_load_properties()
     std::string sku = android::base::GetProperty("ro.boot.hardware.sku", "");
     property_override_dual("ro.product.model", "ro.vendor.product.model", sku.c_str());
 
-    // fingerprint
-    property_override("ro.build.description", "potter-7.0/NPNS25.137-33-11/11:user/release-keys");
-    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "motorola/potter/potter:7.0/NPNS25.137-33-11/11:user/release-keys");
-
     // rmt_storage
     std::string device = android::base::GetProperty("ro.boot.device", "");
     std::string radio = android::base::GetProperty("ro.boot.radio", "");
@@ -92,6 +88,32 @@ void vendor_load_properties()
     property_set("ro.hw.imager", "12MP");
 
     num_sims();
+
+    // devices
+	static const unsigned cedric = (sku == "XT1670") || (sku == "XT1671") || (sku == "XT1672") || (sku == "XT1673") || (sku == "XT1674") || (sku == "XT1675") || (sku == "XT1676") || (sku == "XT1677");
+	static const unsigned potter = (sku == "XT1680") || (sku == "XT1681") || (sku == "XT1682") || (sku == "XT1683") || (sku == "XT1684") || (sku == "XT1685") || (sku == "XT1686") || (sku == "XT1687");
+	static const unsigned montana = (sku == "XT1790") || (sku == "XT1791") || (sku == "XT1792") || (sku == "XT1793") || (sku == "XT1794") || (sku == "XT1795") || (sku == "XT1796") || (sku == "XT1797");
+	static const unsigned sanders = (sku == "XT1800") || (sku == "XT1801") || (sku == "XT1802") || (sku == "XT1803") || (sku == "XT1804") || (sku == "XT1805") || (sku == "XT1806") || (sku == "XT1807");
+    if (cedric) {
+        // fingerprint
+	    property_override("ro.build.description", "cedric-7.0/NPPS25.137-72-4/4:user/release-keys");
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "motorola/cedric/cedric:7.0/NPPS25.137-72-4/4:user/release-keys");
+    }
+    if (potter) {
+        // fingerprint
+        property_override("ro.build.description", "potter-7.0/NPNS25.137-33-11/11:user/release-keys");
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "motorola/potter/potter:7.0/NPNS25.137-33-11/11:user/release-keys");
+    }
+    if (montana) {
+        // fingerprint
+        property_override("ro.build.description", "montana-7.1.1/NPPS26.102-49-11/11:user/release-keys");
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "motorola/montana/montana:7.1.1/NPPS26.102-49-11/11:user/release-keys");
+    }
+    if (sanders) {
+        // fingerprint
+        property_override("ro.build.description", "sanders-7.1.1/NPS26.116-26/30:user/release-keys");
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "motorola/sanders/sanders:7.1.1/NPS26.116-26/30:user/release-keys");
+    }
 
     if (sku == "XT1687") {
         property_set("ro.hw.ecompass", "true");

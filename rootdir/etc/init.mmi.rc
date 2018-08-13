@@ -1,6 +1,9 @@
 # Moto USB configuration
 import /system/vendor/etc/init/hw/init.mmi.usb.rc
 
+# Device specific configuration
+import /system/vendor/etc/init/hw/init.mmi_device.rc
+
 on early-boot
     write /sys/module/subsystem_restart/parameters/disable_restart_work 0x0
     write /proc/sys/kernel/poweroff_cmd "/system/bin/reboot -p"
@@ -73,9 +76,6 @@ on post-fs
     write /proc/sys/vm/page-cluster 0
 
 on post-fs-data
-    # AK09912 calibration file directory
-    mkdir /data/misc/akmd 0770 system compass
-
     #setup folder for WLAN WAPI
     chmod 0770 /data/wapi_certificate
 	
@@ -105,9 +105,6 @@ on post-fs-data
     chmod 0664 /sys/module/qpnp_smbcharger_mmi/parameters/eb_low_start_soc
     chmod 0664 /sys/module/qpnp_smbcharger_mmi/parameters/eb_low_stop_soc
     chmod 0664 /sys/module/qpnp_smbcharger_mmi/parameters/eb_on_sw
-
-    # Sensor Hub calibration data directory
-    mkdir /data/misc/sensorhub 0770 system compass
 
     # Setup folder for native to transfer data to NativeDropBoxAgent
     mkdir /data/system/dropbox-add 0730 system diag
@@ -171,10 +168,6 @@ on boot
    # restore default_message_loglevel to KERN_WARNING
    write /proc/sys/kernel/printk "7 4 1 7"
 
-   # STML0 driver parameter permissions
-   chown root oem_5004 /sys/module/stml0xx/parameters/irq_disable
-   chmod 0660 /sys/module/stml0xx/parameters/irq_disable
-
    chown root oem_5004 /sys/module/phy_msm_usb/parameters/host_mode_disable
    chmod 0660 /sys/module/phy_msm_usb/parameters/host_mode_disable
    chown root oem_5004 /sys/devices/soc/7000000.ssusb/disable_id_pin
@@ -185,20 +178,6 @@ on boot
    chmod 0660 /sys/class/timed_output/vibrator/enable
    chown root oem_5020 /sys/bus/i2c/devices/2-005a/reduce
 
-   # change permission for capsensor
-   chmod 0660 /sys/class/capsense/enable
-   chown system system sys/class/capsense/enable
-
-   #STML0 device permissions
-   chown system compass /dev/stml0xx
-   chmod 0660 /dev/stml0xx
-   chown compass compass /dev/stml0xx_as
-   chmod 0660 /dev/stml0xx_as
-   chown compass compass /dev/stml0xx_ms
-   chmod 0660 /dev/stml0xx_ms
-   chown compass compass /dev/stml0xx_akm
-   chmod 0660 /dev/stml0xx_akm
-
    # Change permission for type C params
    chown root oem_5004 /sys/devices/soc/78b6000.i2c/i2c-2/2-0022/CC_state
    chown root oem_5004 /sys/devices/soc/78b6000.i2c/i2c-2/2-0022/enable_vconn
@@ -207,14 +186,6 @@ on boot
    chmod 0660 /sys/class/i2c-adapter/i2c-2/2-002d/enable
    chown root oem_5004 /sys/class/i2c-adapter/i2c-2/2-002d/hsic_vdd
    chmod 0660 /sys/class/i2c-adapter/i2c-2/2-002d/hsic_vdd
-
-   # Change permission for fingerprint sensor
-   chown system oem_5004 /sys/bus/spi/devices/spi8.0/nav
-   chown system oem_5004 /sys/bus/spi/devices/spi8.0/clk_enable
-   chown system oem_5004 /sys/bus/spi/devices/spi8.0/dev_enable
-   chown system oem_5004 /sys/bus/spi/devices/spi8.0/irq
-   chown system oem_5004 /sys/bus/spi/devices/spi8.0/irq_cnt
-   chmod 0440 /sys/bus/spi/devices/spi8.0/irq_cnt
 
  # Change ownership and permission for backlight
    chown system system /sys/class/backlight/lcd-backlight:0/brightness
@@ -235,24 +206,6 @@ on boot
    # Change ownership and permission for vibrator
    chown system system /sys/class/timed_output/vibrator/enable
    chmod 0660 /sys/class/timed_output/vibrator/enable
-
-   # Change ownership and permission for laser_sensor
-   chown system system /sys/kernel/range/enable_sar
-   chmod 0660 /sys/kernel/range/enable_sar
-   chown system system /sys/kernel/range/set_delay_ms
-   chmod 0660 /sys/kernel/range/set_delay_ms
-   chown system system /sys/kernel/range/near
-   chmod 0660 /sys/kernel/range/near
-
-# Change ownership and permission for rear_sensor
-   chown system system /sys/class/i2c-dev/i2c-2/device/2-0049/enable_sar
-   chmod 0660 /sys/class/i2c-dev/i2c-2/device/2-0049/enable_sar
-   chown system system /sys/class/i2c-dev/i2c-2/device/2-0049/set_delay_ms
-   chmod 0660 /sys/class/i2c-dev/i2c-2/device/2-0049/set_delay_ms
-   chown system system /sys/class/i2c-dev/i2c-6/device/6-0049/enable_sar
-   chmod 0660 /sys/class/i2c-dev/i2c-6/device/6-0049/enable_sar
-   chown system system /sys/class/i2c-dev/i2c-6/device/6-0049/set_delay_ms
-   chmod 0660 /sys/class/i2c-dev/i2c-6/device/6-0049/set_delay_ms
 
 # Change the ownership of display TE files for tcmds
    chown root oem_5004 /sys/class/graphics/fb0/te_enable
@@ -330,13 +283,6 @@ service mmi-boot-sh /system/vendor/bin/sh /system/vendor/bin/init.mmi.boot.sh
 service mmi-laser-sh /system/vendor/bin/sh /system/vendor/bin/init.mmi.laser.sh
     class core
     user root
-    oneshot
-
-# Start Sensor daemon
-service motosh /system/vendor/bin/motosh boot
-    class main
-    user compass
-    group compass misc input
     oneshot
 
 service charge_only_mode /system/bin/charge_only_mode
