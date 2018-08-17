@@ -16,7 +16,7 @@
 
 -include vendor/motorola/msm8953-common/BoardConfigVendor.mk
 
-PLARFORM_PATH := device/motorola/msm8953-common
+PLATFORM_PATH := device/motorola/msm8953-common
 
 TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
 
@@ -82,8 +82,10 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8953-common
-TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_USE_SDCLANG := true
+#TARGET_KERNEL_CLANG_COMPILE := true
+#TARGET_USE_SDCLANG := true
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-android-4.9/bin
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-androidkernel-
 
 # Audio
 AUDIO_FEATURE_ENABLED_ALAC_OFFLOAD := true
