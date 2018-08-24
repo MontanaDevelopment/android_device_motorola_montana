@@ -36,7 +36,7 @@ fi
 setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true
 
 # Copyright headers and guards
-write_headers "potter cedric sanders montana"
+write_headers "potter cedric sanders montana perry"
 
 # The standard blobs
 write_makefiles "$MY_DIR"/proprietary-files.txt

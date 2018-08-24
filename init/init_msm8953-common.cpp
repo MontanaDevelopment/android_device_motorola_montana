@@ -94,6 +94,8 @@ void vendor_load_properties()
 	static const unsigned potter = (sku == "XT1680") || (sku == "XT1681") || (sku == "XT1682") || (sku == "XT1683") || (sku == "XT1684") || (sku == "XT1685") || (sku == "XT1686") || (sku == "XT1687");
 	static const unsigned montana = (sku == "XT1790") || (sku == "XT1791") || (sku == "XT1792") || (sku == "XT1793") || (sku == "XT1794") || (sku == "XT1795") || (sku == "XT1796") || (sku == "XT1797");
 	static const unsigned sanders = (sku == "XT1800") || (sku == "XT1801") || (sku == "XT1802") || (sku == "XT1803") || (sku == "XT1804") || (sku == "XT1805") || (sku == "XT1806") || (sku == "XT1807");
+	static const unsigned perry = (sku == "XT1760") || (sku == "XT1761") || (sku == "XT1762") || (sku == "XT1763") || (sku == "XT1764") || (sku == "XT1765") || (sku == "XT1766") || (sku == "XT1767");
+	
     if (cedric) {
         // fingerprint
 	    property_override("ro.build.description", "cedric-7.0/NPPS25.137-72-4/4:user/release-keys");
@@ -113,6 +115,11 @@ void vendor_load_properties()
         // fingerprint
         property_override("ro.build.description", "sanders-7.1.1/NPS26.116-26/30:user/release-keys");
         property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "motorola/sanders/sanders:7.1.1/NPS26.116-26/30:user/release-keys");
+	}
+	if (perry) {
+        // fingerprint
+        property_override("ro.build.description", "perry-7.1.1/NPNS26.118-22-1/1:user/release-keys");
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "motorola/perry/perry:7.1.1/NPNS26.118-22-1/1:user/release-keys");
     }
 
     if (sku == "XT1687") {
