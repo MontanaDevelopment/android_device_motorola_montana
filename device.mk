@@ -86,7 +86,11 @@ PRODUCT_PACKAGES += \
     libmmieffectswrapper \
     libspeakerbundle \
     libshim_adsp \
-    tinymix
+    tinymix \
+    tinycap \
+    tinypcminfo \
+    tinyplay \
+    cplay
     
 PRODUCT_COPY_FILES += \
     hardware/qcom/audio-caf/msm8996/configs/msm8937/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt \
@@ -117,7 +121,8 @@ PRODUCT_COPY_FILES += \
   
 # Bluetooth
 PRODUCT_PACKAGES += \
-    bt-vendor
+    bt-vendor \
+    libbt-vendor
     
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/bluetooth/interop_database.conf:system/etc/bluetooth/interop_database.conf
@@ -145,12 +150,23 @@ PRODUCT_PACKAGES += \
     gralloc.msm8937 \
     copybit.msm8937 \
     hwcomposer.msm8937 \
-    memtrack.msm8937
-        
+    memtrack.msm8937 \
+    libGLES_android \
+    libmemalloc \
+    libminui \
+    libqdMetaData \
+    libqdutils
+
+#DRM
+PRODUCT_PACKAGES += \
+	libfwdlockengine \
+	libdrmclearkeyplugin
+
 # Fingerprint
 PRODUCT_PACKAGES += \
     fingerprint.msm8937 \
-    activity_recognition.msm8937
+    activity_recognition.msm8937 \
+    fingerprintd
     
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/uinput-fpc.idc:system/usr/idc/uinput-fpc.idc
@@ -160,7 +176,9 @@ PRODUCT_PACKAGES += \
     FMRadio \
     libqcomfm_jni \
     libfm-hci \
-    qcom.fmradio
+    qcom.fmradio \
+    fmhal_service \
+    fm_helium
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -264,7 +282,8 @@ PRODUCT_PACKAGES += \
     libcurl \
     libjson \
     libcutils \
-    libion
+    libion \
+    libbson
 
 
 # Releasetools script
@@ -274,7 +293,8 @@ PRODUCT_COPY_FILES += \
 # RIL
 PRODUCT_PACKAGES += \
     librmnetctl \
-    libshim_ril
+    libshim_ril \
+    rmnetcli
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -298,7 +318,9 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     libqsap_sdk \
     libQWiFiSoftApCfg \
-    wcnss_service
+    wcnss_service \
+    hs20-osu-client \
+    libwifi-hal-qcom
 
 PRODUCT_COPY_FILES += \
     kernel/motorola/msm8937/drivers/staging/prima/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
