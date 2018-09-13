@@ -656,8 +656,8 @@ service vendor.per_proxy /system/vendor/bin/pm-proxy
     disabled
     writepid /dev/cpuset/system-background/tasks
 
-on property:init.svc.per_mgr=running
-    start per_proxy
+on property:init.svc.vendor.per_mgr=running
+    start vendor.per_proxy
 
 on property:sys.shutdown.requested=*
     stop vendor.per_proxy
