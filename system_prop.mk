@@ -120,6 +120,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.recomputecrop=0 \
     debug.enable.sglscale=1
 
+# Fingerprint
+#property to enable fingerprint
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.qfp=false
+
 # FM
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.fm.transmitter=false
