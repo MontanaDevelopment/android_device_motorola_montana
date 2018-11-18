@@ -269,7 +269,7 @@ PRODUCT_COPY_FILES += \
 
 # NFC Configuration
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/libnfc-brcm.conf:system/vendor/etc/libnfc-brcm.conf \
+    $(LOCAL_PATH)/configs/libnfc-nci.conf:system/vendor/etc/libnfc-nci.conf \
     $(LOCAL_PATH)/configs/libnfc-nxp.conf:system/vendor/etc/libnfc-nxp.conf
 
 # Netutils
