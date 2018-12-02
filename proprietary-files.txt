@@ -722,7 +722,7 @@ etc/permissions/qti_permissions.xml
 -framework/imscmlibrary.jar
 -framework/izat.xt.srv.jar
 -framework/qcrilhook.jar
--framework/qti-telephony-common.jar
+-framework/qti-telephony-common.jar|b1953a3599255f08f1785c677d22810f65e0167b
 lib/hw/camera.msm8953.so
 lib/hw/fingerprint.msm8953.so
 lib/hw/sensorhub.msm8953.so
@@ -767,10 +767,10 @@ lib/libYuvSkia.so
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk
 -priv-app/DTVPlayer/DTVPlayer.apk|de470ab2bef4948feb331524e21fead680b67aba
 -priv-app/DTVService/DTVService.apk
+-priv-app/ims/ims.apk|eef47c0b6f250e7f96e7155d84274b1c83940d8f
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 -priv-app/QtiTetherService/QtiTetherService.apk
 -vendor/app/colorservice/colorservice.apk
--vendor/app/ims/ims.apk
 -vendor/app/imssettings/imssettings.apk
 vendor/bin/audioflacapp
 vendor/bin/esepmdaemon
