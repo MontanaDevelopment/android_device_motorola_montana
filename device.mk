@@ -73,12 +73,12 @@ PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libqcomvoiceprocessingdescriptors \
-    libqcompostprocbundle
+    libtinyalsa \
+    libtinyxml
 
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
-    android.hardware.audio.effect@2.0-impl \
-    android.hardware.broadcastradio@1.0-impl
+    android.hardware.audio.effect@2.0-impl
 
 # Audio Configurations
 PRODUCT_COPY_FILES +=  \
@@ -119,7 +119,7 @@ PRODUCT_PACKAGES += \
 
 # LineageActions
 PRODUCT_PACKAGES += \
-    LineageActions
+    MotoActions
 
 # Display
 PRODUCT_PACKAGES += \
