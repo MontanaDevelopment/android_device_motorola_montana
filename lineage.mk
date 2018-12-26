@@ -45,4 +45,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="Moto G5s"
 
 # for specific
-$(call inherit-product, vendor/motorola/montana/montana-vendor.mk)
+$(call inherit-product, vendor/motorola/montana/Montana-vendor.mk)
