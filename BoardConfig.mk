@@ -64,6 +64,7 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-androidkernel-
 
 # Manifest
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifest.xml
+DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/configs/compatibility_matrix.xml
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
