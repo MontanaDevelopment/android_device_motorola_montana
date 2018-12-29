@@ -441,6 +441,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:system/vendor/etc/sensors/sensor_def_qcomdev.conf
 
 PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-impl \
     android.hardware.sensors@1.0-service_32 \
     sensorservice_32
 
