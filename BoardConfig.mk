@@ -56,7 +56,7 @@ BOARD_DTBTOOL_ARGS := --force-v3 --motorola 1
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/motorola/montana
+TARGET_KERNEL_SOURCE := kernel/motorola/msm8937
 #TARGET_KERNEL_CLANG_COMPILE := true
 #TARGET_USE_SDCLANG := true
 KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-android-4.9/bin
@@ -64,6 +64,7 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-androidkernel-
 
 # Manifest
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifest.xml
+DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/configs/compatibility_matrix.xml
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
@@ -108,10 +109,6 @@ endif
 TARGET_NO_RPC := true
 USE_DEVICE_SPECIFIC_GPS := true
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
-
-# Init
-TARGET_INIT_VENDOR_LIB := libinit_msm8953-common
-TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8953-common
 
 # Audio
 AUDIO_FEATURE_ENABLED_ALAC_OFFLOAD := true
