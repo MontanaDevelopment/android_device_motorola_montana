@@ -25,6 +25,12 @@ LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
+LOCAL_SRC_FILES := camera_hal.cpp
+LOCAL_MODULE := libshim_camera_hal
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
 LOCAL_SRC_FILES := libqsap_shim.c
 LOCAL_SHARED_LIBRARIES := libqsap_sdk liblog
 LOCAL_C_INCLUDES := $(TOP)/system/qcom/softap/sdk
@@ -32,4 +38,3 @@ LOCAL_MODULE := libqsap_shim
 LOCAL_MODULE_TAGS := optional
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
-
