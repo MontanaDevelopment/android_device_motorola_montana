@@ -342,7 +342,8 @@ PRODUCT_BOOT_JARS += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    libqsap_shim
+    libqsap_shim \
+    libshim_camera_hal
 
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
