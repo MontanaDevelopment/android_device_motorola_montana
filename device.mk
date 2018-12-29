@@ -342,7 +342,8 @@ PRODUCT_BOOT_JARS += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    libqsap_shim
+    libqsap_shim \
+    libshim_camera_hal
 
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
@@ -440,6 +441,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:system/vendor/etc/sensors/sensor_def_qcomdev.conf
 
 PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-impl \
     android.hardware.sensors@1.0-service_32 \
     sensorservice_32
 

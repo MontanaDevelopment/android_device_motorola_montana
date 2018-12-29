@@ -285,6 +285,12 @@ service mmi-laser-sh /system/vendor/bin/sh /system/vendor/bin/init.mmi.laser.sh
     user root
     oneshot
 
+# Montana uses qcom sensor service
+service sensors /system/vendor/bin/sensors.qcom
+    class core
+    user root
+    group root
+
 service charge_only_mode /system/bin/charge_only_mode
     user root
     group graphics system input
