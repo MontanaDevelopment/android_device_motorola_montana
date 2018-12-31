@@ -225,6 +225,12 @@
     <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
          autodetected from the Configuration. -->
     <bool name="config_showNavigationBar">true</bool>
+    
+    <!-- Whether navigation bar can be disabled (for devices with hardware keys) -->
+    <bool name="config_canDisableNavigationBar">true</bool>
+
+    <!-- Maybe in the future: Whether or not swipe up gesture's opt-in setting is available on this device -->
+    <!-- <bool name="config_swipe_up_gesture_setting_available">true</bool> -->
 
     <!-- Screen brightness used to dim the screen while dozing in a very low power state.
           May be less than the minimum allowed brightness setting
