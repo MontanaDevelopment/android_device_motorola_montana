@@ -227,8 +227,8 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
 # Shim
 TARGET_LD_SHIM_LIBS := \
     /system/vendor/bin/adspd|libshim_adsp.so \
-    /system/vendor/lib64/libmdmcutback.so|libqsap_shim.so \
-    /system/vendor/lib/libHui.so|libshim_camera_hal.so
+    /system/vendor/lib/libmmcamera_ppeiscore.so|libshim_camera.so \
+    /system/vendor/lib64/libmdmcutback.so|libqsap_shim.so
 
 # Thermal
 USE_DEVICE_SPECIFIC_THERMAL := true
