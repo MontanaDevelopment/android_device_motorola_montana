@@ -67,12 +67,10 @@ public class GlanceSensor implements ScreenStateNotifier, SensorEventListener {
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        boolean isNear = event.values[0] < mSensor.getMaximumRange();
-        if (mSawNear && !isNear) {
-            Log.d(TAG, "wave triggered");
-            mSensorAction.action();
-        }
-        mSawNear = isNear;
+        Log.d(TAG, "triggered");
+        
+        mSensorAction.action();
+        mSensorHelper.registerListener(mSensor, this);
     }
 
     @Override
