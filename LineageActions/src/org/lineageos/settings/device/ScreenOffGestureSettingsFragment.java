@@ -27,8 +27,6 @@ import static android.provider.Settings.Secure.DOUBLE_TAP_TO_WAKE;
 import static org.lineageos.settings.device.actions.Constants.KEY_GESTURE_ENABLE_HAPTIC_FEEDBACK;
 import static org.lineageos.settings.device.actions.Constants.KEY_GESTURE_ENABLE_PROXIMITY_SENSOR;
 
-import org.lineageos.settings.device.utils.ProximityUtils;
-
 public class ScreenOffGestureSettingsFragment extends PreferenceFragment {
 
     private SwitchPreference mTapToWake;
@@ -76,11 +74,6 @@ public class ScreenOffGestureSettingsFragment extends PreferenceFragment {
                 return true;
             }
         });
-
-        if (!ProximityUtils.isProximityWakeEnabled(getActivity()) && mProximitySensor != null){
-            getPreferenceScreen().removePreference(mProximitySensor);
-            mProximitySensor = null;
-        }
     }
 
 }
