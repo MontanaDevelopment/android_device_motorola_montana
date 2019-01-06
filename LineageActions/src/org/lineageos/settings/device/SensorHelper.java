@@ -82,7 +82,13 @@ public class SensorHelper {
     }
 
     public Sensor getGlanceSensor() {
-        return mSensorManager.getDefaultSensor(Sensor.TYPE_GLANCE_GESTURE, true);
+        List<Sensor> sensorList = mSensorManager.getSensorList(Sensor.TYPE_PROXIMITY);
+        for (Sensor sensor : sensorList) {
+            if (sensor.getName() == "Rear Proximity sensor") {
+                return sensor;
+            }
+        }
+        return mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY, false);
     }
 
     public Sensor getProximitySensor() {
