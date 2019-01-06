@@ -1,1 +1,1 @@
-add_lunch_combo pixys_cedric-userdebug
+add_lunch_combo aosp_cedric-userdebug
