@@ -37,9 +37,6 @@ allow init self:netlink_socket { read write getattr connect };
 allow init debugfs:file write;
 allow init persist_file:filesystem { getattr mount relabelfrom relabelto unmount };
 
-# Screen off gestures
-allow init sysfs_screen_off_gestures:file { rw_file_perms setattr };
-
 allow init self:capability sys_nice;
 
 allow init bt_firmware_file:filesystem { associate };
@@ -57,4 +54,3 @@ allow init { domain -lmkd -crash_dump }:process noatsecure;
 
 allow init hal_perf_hwservice:hwservice_manager find;
 allow init hidl_base_hwservice:hwservice_manager add;
-
