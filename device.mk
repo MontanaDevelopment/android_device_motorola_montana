@@ -16,7 +16,6 @@
 # limitations under the License.
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-$(call inherit-product, device/motorola/montana/system_prop.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
@@ -107,7 +106,6 @@ PRODUCT_PACKAGES += \
     Snap \
     camera.device@1.0-impl \
     camera.device@3.2-impl \
-    camera.msm8937 \
     libshim_camera \
     android.hardware.camera.provider@2.4-impl \
     vendor.qti.hardware.camera.device@1.0 \
@@ -399,7 +397,6 @@ PRODUCT_PACKAGES += \
     WCNSS_wlan_dictionary.dat
 
 PRODUCT_COPY_FILES += \
-    kernel/motorola/msm8937/drivers/staging/prima/firmware_bin/WCNSS_cfg.dat:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_cfg.dat \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_cfg.ini
