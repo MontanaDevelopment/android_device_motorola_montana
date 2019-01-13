@@ -2,9 +2,11 @@
 
 sku=`getprop ro.boot.hardware.sku`
 device=`getprop ro.boot.device`
+radio=`getprop ro.boot.radio`
 
-if [ "$sku" == "XT1687" ] || [ "$device" = "cedric" ]; then
+if [ "$sku" == "XT1687" ] || [ "$device" = "cedric" ] || [ "$radio" != "EMEA" ] && [ "$radio" != "APAC" ]; then
     # XT1687 and cedric don't have NFC chips
+    # On montana only EMEA and APAC radios have NFC
     rm /system/vendor/etc/permissions/android.hardware.nfc.xml
     rm /system/vendor/etc/permissions/android.hardware.nfc.hce.xml
     rm /system/vendor/etc/permissions/com.android.nfc_extras.xml
