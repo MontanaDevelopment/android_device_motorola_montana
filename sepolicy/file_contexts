@@ -22,7 +22,7 @@
 # Camera
 /sys/kernel/range(/.*)?                                 u:object_r:sysfs_mmi_laser:s0
 
-# CMActions
+# MotoActions
 /sys/homebutton(/.*)?                                    u:object_r:sysfs_homebutton:s0
 
 # Motorola services
@@ -87,7 +87,7 @@
 /dev/mot_hob_ram                                         u:object_r:hob_device:s0
 /dev/smd3                                                u:object_r:hci_attach_dev:s0
 
-
+# NFC
 /dev/bcm2079x-i2c                                        u:object_r:nfc_device:s0
 
 /dev/fb_quickdraw                                        u:object_r:graphics_fb_device:s0
