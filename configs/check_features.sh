@@ -1,4 +1,4 @@
-#!/sbin/sh
+#!/system/bin/sh
 
 sku=`getprop ro.boot.hardware.sku`
 device=`getprop ro.boot.device`
