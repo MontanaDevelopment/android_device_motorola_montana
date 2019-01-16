@@ -4,7 +4,7 @@ sku=`getprop ro.boot.hardware.sku`
 device=`getprop ro.boot.device`
 radio=`getprop ro.boot.radio`
 
-function remove_nfc () {
+remove_nfc() {
     rm /system/vendor/etc/permissions/android.hardware.nfc.xml
     rm /system/vendor/etc/permissions/android.hardware.nfc.hce.xml
     rm /system/vendor/etc/permissions/com.android.nfc_extras.xml
