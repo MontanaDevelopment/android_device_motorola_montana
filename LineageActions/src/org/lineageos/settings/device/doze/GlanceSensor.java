@@ -68,9 +68,7 @@ public class GlanceSensor implements ScreenStateNotifier, SensorEventListener {
     @Override
     public void onSensorChanged(SensorEvent event) {
         Log.d(TAG, "triggered");
-        
         mSensorAction.action();
-        mSensorHelper.registerListener(mSensor, this);
     }
 
     @Override

@@ -15,6 +15,7 @@ r_dir_file(charge_only, cgroup)
 
 allow charge_only self:capability { dac_override net_admin sys_tty_config sys_boot };
 allow charge_only self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+allow charge_only self:netlink_kobject_uevent_socket { bind read setopt create };
 
 wakelock_use(charge_only)
 

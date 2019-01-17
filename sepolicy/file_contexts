@@ -11,8 +11,6 @@
 /system/vendor/bin/init\.mmi\.boot\.sh                          u:object_r:mmi_boot_exec:s0
 /system/vendor/bin/init\.mmi\.laser\.sh                         u:object_r:mmi_laser_exec:s0
 /system/vendor/bin/wlan_carrier_bin\.sh                         u:object_r:init_wifi_exec:s0
-/system/vendor/bin/motosh                                       u:object_r:sensor_hub_exec:s0
-/system/vendor/bin/akmd09912                                    u:object_r:akmd_exec:s0
 /system/vendor/bin/init\.qti\.fm\.sh		u:object_r:qti_init_shell_exec:s0
 /system/vendor/bin/hw/motorola\.hardware\.camera\.provider@2\.4-service u:object_r:hal_camera_default_exec:s0
 /system/vendor/lib/motorola\.hardware\.camera\.device@1\.0.so                  u:object_r:hal_camera_default_exec:s0
@@ -24,7 +22,7 @@
 # Camera
 /sys/kernel/range(/.*)?                                 u:object_r:sysfs_mmi_laser:s0
 
-# CMActions
+# MotoActions
 /sys/homebutton(/.*)?                                    u:object_r:sysfs_homebutton:s0
 
 # Motorola services
@@ -35,7 +33,7 @@
 /data/fpc                                                u:object_r:fingerprintd_data_file:s0
 /data/fpc/socket                                         u:object_r:fpc_socket:s0
 
-/sys/devices/soc/7af8000.spi/spi_master/spi8/spi8.0(/.*)? u:object_r:sysfs_fpc:s0
+/sys/devices/soc/78b5000.spi/spi_master/spi1/spi1.0(/.*)? u:object_r:sysfs_fpc:s0
 
 # Modem
 /persist/mdm(/.*)?                                       u:object_r:persist_modem_file:s0
@@ -89,7 +87,7 @@
 /dev/mot_hob_ram                                         u:object_r:hob_device:s0
 /dev/smd3                                                u:object_r:hci_attach_dev:s0
 
-
+# NFC
 /dev/bcm2079x-i2c                                        u:object_r:nfc_device:s0
 
 /dev/fb_quickdraw                                        u:object_r:graphics_fb_device:s0
@@ -124,12 +122,6 @@
 # WCNSS
 /sys/module/wcnsscore/parameters(/.*)?                   u:object_r:sysfs_wcnsscore:s0
 
-# Screen off gestures
-/sys/android_touch/gesture_swipe_right                   u:object_r:sysfs_screen_off_gestures:s0
-/sys/android_touch/gesture_swipe_left                    u:object_r:sysfs_screen_off_gestures:s0
-/sys/android_touch/gesture_swipe_down                    u:object_r:sysfs_screen_off_gestures:s0
-/sys/android_touch/gesture_swipe_up                      u:object_r:sysfs_screen_off_gestures:s0
-
 /data/misc/perfd(/.*)?                                          u:object_r:perfd_data_file:s0
 /data/system/perfd(/.*)?                                        u:object_r:perfd_data_file:s0
 /data/oemnvitems(/.*)?                                          u:object_r:nv_data_file:s0
@@ -147,4 +139,3 @@
 
 # Fingerprint custom hal
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service_32 u:object_r:hal_fingerprint_default_exec:s0
-
