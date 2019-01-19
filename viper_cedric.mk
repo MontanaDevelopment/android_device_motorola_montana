@@ -19,7 +19,7 @@
 $(call inherit-product, device/motorola/cedric/full_cedric.mk)
 
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/viper/config/common_full_phone.mk)
 
 # Boot animation
 TARGET_SCREEN_WIDTH := 1080
@@ -27,9 +27,11 @@ TARGET_SCREEN_HEIGHT := 1920
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := cedric
-PRODUCT_NAME := lineage_cedric
+PRODUCT_NAME := viper_cedric
 PRODUCT_BRAND := motorola
 PRODUCT_MANUFACTURER := motorola
 
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
+
+
