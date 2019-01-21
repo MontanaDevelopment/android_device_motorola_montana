@@ -15,3 +15,5 @@ allow sensors sensors_persist_file:dir rw_dir_perms;
 allow sensors self:socket *;
 
 allow sensors sysfs_socinfo:file { read open getattr };
+
+allow sensors self:capability { net_raw }
