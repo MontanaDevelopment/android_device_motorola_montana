@@ -1,19 +1,19 @@
-# b/18417109
-# The kernel code does a permission check of both net_bind_service and
-# net_raw, and allows access if either one returns true.
-# It does the net_raw check first, triggering an SELinux denial.
-# No need to audit
-dontaudit sensors self:capability net_raw;
+# drop privileges
+allow sensors self:capability { sys_nice };
+
+allow sensors sensors_persist_file:dir setattr;
 
 # Access power management controls
 allow sensors sensors_device:chr_file rw_file_perms;
-allow sensors sensors_socket:sock_file create_file_perms;
 allow sensors socket_device:dir { add_name write remove_name };
-
-# Wake lock access
-wakelock_use(sensors)
 
 # Access to /persist/sensors
 allow sensors persist_file:dir {create open getattr setattr read write link unlink rename search add_name remove_name reparent rmdir lock ioctl };
 allow sensors persist_file:file {create open getattr setattr read write append rename link unlink ioctl lock};
+allow sensors sensors_persist_file:dir rw_dir_perms;
+
 allow sensors self:socket *;
+
+allow sensors sysfs_socinfo:file { read open getattr };
+
+allow sensors self:capability { net_raw };
