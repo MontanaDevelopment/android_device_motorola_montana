@@ -16,4 +16,4 @@ allow sensors self:socket *;
 
 allow sensors sysfs_socinfo:file { read open getattr };
 
-allow sensors self:capability { net_raw }
+allow sensors self:capability { net_raw };
