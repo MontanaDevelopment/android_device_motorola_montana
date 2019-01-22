@@ -36,8 +36,6 @@ public class GlanceSensor implements ScreenStateNotifier, SensorEventListener {
 
     private boolean mEnabled;
 
-    private boolean mSawNear = false;
-
     public GlanceSensor(LineageActionsSettings lineageActionsSettings, SensorHelper sensorHelper,
                 SensorAction action) {
         mLineageActionsSettings = lineageActionsSettings;
