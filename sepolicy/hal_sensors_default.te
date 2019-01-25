@@ -16,7 +16,7 @@ allow hal_sensors_default proc_net:file { getattr open read };
 allow hal_sensors_default sysfs_capsense:dir search;
 allow hal_sensors_default sysfs_capsense:file { open write };
 
-# Access to /persist/sensors for the sensors HAL
-allow hal_sensors_default persist_file:dir {create open getattr setattr read write link unlink rename search add_name remove_name reparent rmdir lock ioctl };
-allow hal_sensors_default persist_file:file {create open getattr setattr read write append rename link unlink ioctl lock};
-allow hal_sensors_default sensors_persist_file:dir rw_dir_perms;
+allow hal_sensors_default persist_file:file { read open };
+
+allow hal_sensors_default system_data_file:dir {add_name write };
+allow hal_sensors_default system_data_file:file r_file_perms;
