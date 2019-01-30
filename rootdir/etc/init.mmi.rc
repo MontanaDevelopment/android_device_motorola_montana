@@ -1,9 +1,6 @@
 # Moto USB configuration
 import /system/vendor/etc/init/hw/init.mmi.usb.rc
 
-# Device specific configuration
-import /system/vendor/etc/init/hw/init.mmi_device.rc
-
 on early-boot
     write /sys/module/subsystem_restart/parameters/disable_restart_work 0x0
     write /proc/sys/kernel/poweroff_cmd "/system/bin/reboot -p"

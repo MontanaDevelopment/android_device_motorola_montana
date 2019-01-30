@@ -27,9 +27,6 @@
 
 import /system/vendor/etc/init/hw/init.mmi.rc
 
-# Device specific configuration
-import /system/vendor/etc/init/hw/init.qcom_device.rc
-
 on early-init
     mount debugfs debugfs /sys/kernel/debug
     chmod 0755 /sys/kernel/debug
