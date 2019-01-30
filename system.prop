@@ -113,6 +113,9 @@ persist.hwc.enable_vds=1
 debug.sf.recomputecrop=0 
 debug.enable.sglscale=1
 
+# Fingerprint scanner
+persist.qfp=false
+
 # FM
 ro.fm.transmitter=false
 
