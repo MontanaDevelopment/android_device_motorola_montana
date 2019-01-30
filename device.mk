@@ -248,21 +248,21 @@ PRODUCT_COPY_FILES += \
 # NFC
 PRODUCT_PACKAGES += \
     libnfc \
-    libnfc_jni \
-    nfc_nci.msm8937 \
     NfcNci \
+    nqnfcee_access.xml \
+    nqnfcse_access.xml \
+    SecureElement \
     Tag \
     com.android.nfc_extras \
-    android.hardware.nfc@1.0-impl
+    android.hardware.nfc@1.1-service
 
 PRODUCT_COPY_FILES += \
     frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/nfc/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
-    $(LOCAL_PATH)/configs/nfc/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
-    $(LOCAL_PATH)/configs/nfc/etc/libnfc-nxp_ds.conf:system/etc/libnfc-nxp_ds.conf
+    $(LOCAL_PATH)/configs/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
+    $(LOCAL_PATH)/configs/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
 
 # Netutils
 PRODUCT_PACKAGES += \
