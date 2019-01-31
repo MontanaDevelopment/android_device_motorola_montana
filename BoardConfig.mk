@@ -222,6 +222,7 @@ BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 TARGET_LD_SHIM_LIBS := \
     /system/vendor/bin/adspd|libshim_adsp.so \
     /system/vendor/lib/libmot_gpu_mapper.so|libgpu_mapper_shim.so \
+    /system/lib/libjustshoot.so|libjustshoot_shim.so \
     /system/vendor/lib/libjustshoot.so|libjustshoot_shim.so \
     /system/vendor/lib64/libmdmcutback.so|libqsap_shim.so
 
