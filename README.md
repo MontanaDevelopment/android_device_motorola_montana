@@ -1,21 +1,21 @@
-Device Tree for the Moto G5(s) Lineup
-===========================================
+Device Tree for Moto G5s (Montana)
 
-The Motorola Moto G5(s) is a mid-range smartphone lineup from Motorola mobility.
-The G5 line was announced on February 2017 and the G5S line was announced on August.
+The Motorola Moto G5s (codenamed _"montana"_) is a mid-range smartphone from Motorola mobility.
+It was announced on August 2017.
 
 Basic   | Spec Sheet
 -------:|:-------------------------
-CPU     | Octa-core 2.0 GHz or 1.4 GHz Cortex-A53
-Chipset | Qualcomm MSM8953 Snapdragon 625 or Qualcomm MSM8937 Snapdragon 430
-GPU     | Adreno 506 or Adreno 505
-Memory  | 2,3 or 4 GB RAM
-Shipped Android Version | 7.0.0 or 7.1.0
-Storage | 16GB, 32 GB or 64GB
+CPU     | Quad-core 1.4 GHz Cortex-A53 && Quad-core 1.1 GHz Cortex-A53
+Chipset | Qualcomm MSM8937 Snapdragon 430
+GPU     | Adreno 505
+Memory  | 3 GB RAM
+Shipped Android Version | 7.1
+Storage | 32 GB
 MicroSD | Up to 256 GB
-Battery | Various
-Display | 1080 x 1920 pixels, various densities
-Rear Camera  | Various
-Front Camera  |  Various
+Battery | Li-Ion 3000mAh battery
+Display | 1080 x 1920 pixels, 5.2 inches (~424 ppi pixel density)
+Camera  | 13 MP, phase detection autofocus, LED flash
 
-Copyright 2017-2018 - The LineageOS Project.
+Copyright 2018 - The LineageOS Project.
+
+![Moto G5s](https://cdn2.gsmarena.com/vv/pics/motorola/motorola-moto-g5s-2.jpg "Moto G5s")

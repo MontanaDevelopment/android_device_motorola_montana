@@ -1,6 +1,7 @@
 #
 # Copyright (C) 2016 The CyanogenMod Project
 # Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,10 +18,10 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Proprietary
-$(call inherit-product, vendor/motorola/msm8953-common/msm8953-common-vendor.mk)
+$(call inherit-product, vendor/motorola/montana/montana-vendor.mk)
 
 # Build Props
-$(call inherit-product, device/motorola/msm8953-common/system_prop.mk)
+$(call inherit-product, device/motorola/montana/system_prop.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
@@ -93,6 +94,7 @@ PRODUCT_COPY_FILES +=  \
     $(LOCAL_PATH)/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
     $(LOCAL_PATH)/audio/audio_policy.conf:system/vendor/etc/audio_policy.conf \
     $(LOCAL_PATH)/audio/audio_output_policy.conf:system/vendor/etc/audio_output_policy.conf \
+    $(LOCAL_PATH)/audio/mixer_paths.xml:system/vendor/etc/mixer_paths.xml \
     $(LOCAL_PATH)/audio/audio_platform_info_extcodec.xml:system/vendor/etc/audio_platform_info_extcodec.xml \
     $(LOCAL_PATH)/audio/audio_ext_spkr.conf:system/vendor/etc/audio_ext_spkr.conf \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:system/vendor/etc/audio_platform_info.xml \
@@ -115,18 +117,11 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.device@1.0_vendor
 
+# Camera Configurations
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/gps/etc/flp.conf:system/vendor/etc/flp.conf \
-    $(LOCAL_PATH)/gps/etc/gps.conf:system/vendor/etc/gps.conf \
-    $(LOCAL_PATH)/gps/etc/izat.conf:system/vendor/etc/izat.conf \
-    $(LOCAL_PATH)/gps/etc/lowi.conf:system/vendor/etc/lowi.conf \
-    $(LOCAL_PATH)/gps/etc/sap.conf:system/vendor/etc/sap.conf \
-    $(LOCAL_PATH)/gps/etc/xtwifi.conf:system/vendor/etc/xtwifi.conf \
-    $(LOCAL_PATH)/gps/etc/cacert_location.pem:system/vendor/etc/cacert_location.pem
-
-# LineageActions
-PRODUCT_PACKAGES += \
-    LineageActions
+    $(LOCAL_PATH)/configs/camera/msm8937_mot_montana_camera.xml:system/etc/camera/msm8937_mot_montana_camera.xml \
+    $(LOCAL_PATH)/configs/camera/mot_ov5695_l5695f60_chromatix.xml:system/etc/camera/mot_ov5695_l5695f60_chromatix.xml \
+    $(LOCAL_PATH)/configs/camera/s5k3p3_chromatix.xml:system/etc/camera/s5k3p3_chromatix.xml
 
 # Display
 PRODUCT_PACKAGES += \
@@ -149,13 +144,20 @@ PRODUCT_PACKAGES += \
     vendor.display.config@1.0 \
     vendor.display.config@1.0_vendor
 
+# Display Calibration
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@1.0-service-sdm
+
 # RenderScript HAL
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
 # DRM
 PRODUCT_PACKAGES += \
-    libprotobuf-cpp-lite
+    libprotobuf-cpp-lite \
+    android.hardware.drm@1.0-service \
+    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service.widevine
 
 # limit dex2oat threads to improve thermals
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -229,15 +231,9 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service \
     lights.msm8953
 
-# Display Calibration
+# LineageActions
 PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@1.0-service-sdm
-
-# DRM
-PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-service \
-    android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.0-service.widevine
+    LineageActions
 
 # Media
 PRODUCT_PACKAGES += \
@@ -249,16 +245,22 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/vendor/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/vendor/etc/media_codecs_google_video.xml
 
+# Media Configurations
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/media_codecs.xml:system/vendor/etc/media_codecs.xml \
+    $(LOCAL_PATH)/configs/media_codecs_8956.xml:system/vendor/etc/media_codecs_8956.xml \
+    $(LOCAL_PATH)/configs/media_codecs_performance.xml:system/vendor/etc/media_codecs_performance.xml \
+    $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
+    $(LOCAL_PATH)/configs/media_profiles_8956.xml:system/vendor/etc/media_profiles_8956.xml
+
 # NFC
 PRODUCT_COPY_FILES += \
     frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml
 
-# montana uses non-common NFC config
-ifeq ($(filter montana,$(TARGET_DEVICE)),)
+# NFC Configuration
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
-    $(LOCAL_PATH)/configs/libnfc-nxp.conf:system/etc/libnfc-nxp.conf
-endif
+    $(LOCAL_PATH)/configs/libnfc-brcm.conf:system/vendor/etc/libnfc-brcm.conf \
+    $(LOCAL_PATH)/configs/libnfc-nxp.conf:system/vendor/etc/libnfc-nxp.conf
 
 # Netutils
 PRODUCT_PACKAGES += \
@@ -310,6 +312,10 @@ PRODUCT_PACKAGES += \
     init.mmi.usb.rc \
     init.qcom.rc \
 
+PRODUCT_PACKAGES += \
+    init.qcom_device.rc \
+    init.mmi_device.rc
+
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/rootdir/etc/ueventd.qcom.rc:system/vendor/ueventd.rc
 
@@ -349,6 +355,15 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     libqsap_shim
 
+# Sensors
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sensors/hals.conf:system/vendor/etc/sensors/hals.conf \
+    $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:system/vendor/etc/sensors/sensor_def_qcomdev.conf
+
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-service
+
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
     textclassifier.smartselection.bundle1
@@ -377,7 +392,7 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
-#Thermal
+# Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \
     android.hardware.thermal@1.0-service \
@@ -391,6 +406,8 @@ PRODUCT_PACKAGES += \
     tcpdump \
     wcnss_service \
     libwpa_client
+
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/thermal-engine-montana.conf:system/vendor/etc/thermal-engine.conf
 
 # Wifi Symlinks
 PRODUCT_PACKAGES += \

@@ -1,6 +1,7 @@
 #
 # Copyright (C) 2016 The CyanogenMod Project
-#               2017 The LineageOS Project
+# Copyright (C) 2017 The LineageOS Project
+#               2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,25 +15,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
--include vendor/motorola/msm8953-common/BoardConfigVendor.mk
+DEVICE_PATH := device/motorola/montana
 
-PLATFORM_PATH := device/motorola/msm8953-common
-
-TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
+TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 BOARD_VENDOR := motorola-qcom
 
 WITH_LINEAGE_CHARGER := false
 
 # AIDs and CAPS
-TARGET_FS_CONFIG_GEN := $(PLATFORM_PATH)/config.fs
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 # Platform
-TARGET_BOARD_PLATFORM := msm8953
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno506
+TARGET_BOARD_PLATFORM := msm8937
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno505
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := MSM8953
+TARGET_BOOTLOADER_BOARD_NAME := MSM8937
 TARGET_NO_BOOTLOADER := true
 
 # Architecture
@@ -48,6 +47,9 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 TARGET_USES_64_BIT_BINDER := true
+
+# Asserts
+TARGET_OTA_ASSERT_DEVICE := montana,montana_retail
 
 # Enable dexpreopt to speed boot time
 ifeq ($(HOST_OS),linux)
@@ -65,10 +67,12 @@ USE_DEVICE_SPECIFIC_GPS := true
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_msm8953-common
-TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8953-common
+TARGET_INIT_VENDOR_LIB := libinit_montana
+TARGET_RECOVERY_DEVICE_MODULES := libinit_montana
 
 # Kernel
+BOARD_KERNEL_LZ4C_DT := true
+TARGET_KERNEL_CONFIG := montana_defconfig
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237
 BOARD_KERNEL_CMDLINE += ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 vmalloc=350M
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
@@ -119,7 +123,7 @@ BOARD_USES_GENERIC_AUDIO := true
 TARGET_USES_QCOM_MM_AUDIO := true
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(PLATFORM_PATH)/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 
@@ -168,11 +172,11 @@ TARGET_PROVIDES_LIBLIGHT := true
 
 # Lineage Hardware
 BOARD_HARDWARE_CLASS += \
-    $(PLATFORM_PATH)/lineagehw
+    $(DEVICE_PATH)/lineagehw
 
 # Manifest
-DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/configs/manifest.xml
-DEVICE_MATRIX_FILE   := $(PLATFORM_PATH)/configs/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifest.xml
+DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/configs/compatibility_matrix.xml
 
 # NFC
 NXP_CHIP_TYPE := PN551
@@ -181,6 +185,10 @@ BOARD_NFC_HAL_SUFFIX := $(TARGET_BOARD_PLATFORM)
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16879616    #    16484 * 1024 mmcblk0p38
+BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456      #   262144 * 1024 mmcblk0p52
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3623878656    #  3538944 * 1024 mmcblk0p53
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 26403126272 # 25784303 * 1024 mmcblk0p54
 
 # Peripheral manager
 TARGET_PER_MGR_ENABLED := true
@@ -197,17 +205,17 @@ TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
-TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.recovery
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.recovery
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 LZMA_RAMDISK_TARGETS := recovery
 
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := $(PLATFORM_PATH)/releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Shim
 TARGET_LD_SHIM_LIBS := $(TARGET_LD_SHIM_LIBS_DEVICE)
@@ -230,3 +238,6 @@ WIFI_DRIVER_FW_PATH_AP           := "ap"
 WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_P2P          := "p2p"
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
+
+# inherit from the proprietary version
+-include vendor/motorola/montana/BoardConfigVendor.mk

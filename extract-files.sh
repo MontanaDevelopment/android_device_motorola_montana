@@ -1,6 +1,5 @@
 #!/bin/bash
 #
-# Copyright (C) 2016 The CyanogenMod Project
 # Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,6 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+export DEVICE=montana
+export VENDOR=motorola
+
+export DEVICE_BRINGUP_YEAR=2018
 
 set -e
 
@@ -53,16 +56,9 @@ if [ -z "$SRC" ]; then
 fi
 
 # Initialize the helper
-setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true "$CLEAN_VENDOR"
+setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" true "$CLEAN_VENDOR"
 
 extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
 extract "$MY_DIR"/proprietary-files64.txt "$SRC" "$SECTION"
-
-if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
-    # Reinitialize the helper for device
-    setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false "$CLEAN_VENDOR"
-
-    extract "$MY_DIR"/../$DEVICE/proprietary-files.txt "$SRC" "$SECTION"
-fi
 
 "$MY_DIR"/setup-makefiles.sh
