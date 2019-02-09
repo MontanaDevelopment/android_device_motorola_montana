@@ -70,7 +70,7 @@ PRODUCT_AAPT_CONFIG := normal
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio.primary.msm8953 \
+    audio.primary.msm8937 \
     audio.a2dp.default \
     audio.usb.default \
     audio.r_submix.default \
@@ -125,8 +125,8 @@ PRODUCT_COPY_FILES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    copybit.msm8953 \
-    gralloc.msm8953 \
+    copybit.msm8937 \
+    gralloc.msm8937 \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.1-impl \
@@ -135,8 +135,8 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
     android.hardware.configstore@1.0-service \
-    hwcomposer.msm8953 \
-    memtrack.msm8953 \
+    hwcomposer.msm8937 \
+    memtrack.msm8937 \
     libgenlock \
     libtinyxml \
     libdisplayconfig \
@@ -174,7 +174,7 @@ PRODUCT_PACKAGES += \
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service_32 \
-    fingerprint.msm8953
+    fingerprint.msm8937
 
 # FM
 PRODUCT_PACKAGES += \
@@ -229,7 +229,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
     android.hardware.light@2.0-service \
-    lights.msm8953
+    lights.msm8937
 
 # LineageActions
 PRODUCT_PACKAGES += \
@@ -272,7 +272,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libnfc \
     libnfc_jni \
-    nfc_nci.msm8953 \
+    nfc_nci.msm8937 \
     NfcNci \
     Tag \
     com.android.nfc_extras \
@@ -396,7 +396,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \
     android.hardware.thermal@1.0-service \
-    thermal.msm8953
+    thermal.msm8937
 
 PRODUCT_PACKAGES += \
     libcurl \

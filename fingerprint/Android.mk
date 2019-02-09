@@ -25,7 +25,7 @@ LOCAL_SHARED_LIBRARIES := \
     libhardware liblog
 
 LOCAL_MODULE_RELATIVE_PATH := hw
-LOCAL_MODULE := fingerprint.msm8953
+LOCAL_MODULE := fingerprint.$(TARGET_BOARD_PLATFORM)
 LOCAL_MODULE_TAGS := optional
 LOCAL_32_BIT_ONLY := true
 
