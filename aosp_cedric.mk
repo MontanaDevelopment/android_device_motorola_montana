@@ -19,7 +19,7 @@
 $(call inherit-product, device/motorola/cedric/full_cedric.mk)
 
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/aosp/config/common.mk)
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Boot animation
 TARGET_SCREEN_WIDTH := 1080
