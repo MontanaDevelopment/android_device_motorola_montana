@@ -36,11 +36,4 @@ PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
 
 
-export VIPER_BUILD_TYPE=OFFICIAL
-export USE_CCACHE=1
-
-# Maintainer ViperOS
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.viper.maintainer=ZJRDroid
-
 export KBUILD_COMPILER_STRING=clang-8.0.8
