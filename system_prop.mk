@@ -58,12 +58,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     camera.disable_zsl_mode=1 \
+    camera.display.umax=1920x1080 \
+    camera.display.lmax=1280x720 \
     persist.vendor.camera.display.umax=1920x1080 \
     persist.vendor.camera.display.lmax=1280x720 \
+    persist.camera.max.previewfps=60 \
     camera.mot.startup_probing=0 \
     persist.camera.debug.logfile=0 \
     persist.camera.gyro.disable=0 \
-    persist.camera.HAL3.enabled=1 \
+    persist.camera.HAL3.enabled=0 \
     vidc.enc.dcvs.extra-buff-count=2 \
     vendor.vidc.enc.disable_bframes=1 \
     vendor.vidc.disable.split.mode=1 \
@@ -128,7 +131,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.layer_cache_size=48 \
     ro.hwui.path_cache_size=32 \
     ro.hwui.r_buffer_cache_size=8 \
-    ro.hwui.text_large_cache_height=1024 \
+    ro.hwui.text_large_cache_height=2048 \
     ro.hwui.text_large_cache_width=2048 \
     ro.hwui.text_small_cache_height=1024 \
     ro.hwui.text_small_cache_width=1024 \
@@ -153,7 +156,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.mm.sta.enable=0 \
     persist.vt.supported=0 \
     persist.volte_enabled_by_hw=1 \
-    persist.dbg.volte_avail_ovr=1
+    persist.dbg.volte_avail_ovr=1 \
+    ro.config.hw_volte_on=true
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -194,6 +198,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.no_wait_for_card=1 \
     persist.vendor.radio.oem_ind_to_both=0 \
     persist.vendor.radio.relay_oprt_change=1 \
+    rild.libargs=-d /dev/smd0 \
     rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so \
     ro.mot.ignore_csim_appid=true \
     persist.sys.ssr.restart_level=ALL_ENABLE \
@@ -237,6 +242,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.df.mux_count=8 \
     persist.data.df.iwlan_mux=9 \
     persist.data.df.dev_name=rmnet_usb0
+
+# Sensors
+ro.hardware.sensors=montana
 
 #Trim properties
 PRODUCT_PROPERTY_OVERRIDES += \
