@@ -26,7 +26,7 @@ import com.moto.actions.MotoActionsSettings;
 import com.moto.actions.SensorAction;
 import com.moto.actions.SensorHelper;
 
-public class GlanceSensor implements ScreenStateNotifier, SensorEventListener {
+public class GlanceSensor implements ScreenStateNotifier {
     private static final String TAG = "MotoActions-GlanceSensor";
 
     private final MotoActionsSettings mMotoActionsSettings;
