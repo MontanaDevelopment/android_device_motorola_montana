@@ -214,14 +214,6 @@ TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
-# Shims
-TARGET_LD_SHIM_LIBS := \
-    /vendor/bin/adspd|libshim_adsp.so \
-    /vendor/lib/libmot_gpu_mapper.so|libgpu_mapper_shim.so \
-    /system/lib/libjustshoot.so|libjustshoot_shim.so \
-    /vendor/lib/libjustshoot.so|libjustshoot_shim.so \
-    /vendor/lib64/libmdmcutback.so|libqsap_shim.so
-
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH)/libhidl \
