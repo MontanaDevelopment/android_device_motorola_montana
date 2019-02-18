@@ -197,6 +197,16 @@ PRODUCT_PACKAGES += \
     libqsap_sdk \
     libqsap_shim
 
+# GPS configuration
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/gps/etc/flp.conf:system/vendor/etc/flp.conf \
+    $(LOCAL_PATH)/gps/etc/gps.conf:system/vendor/etc/gps.conf \
+    $(LOCAL_PATH)/gps/etc/izat.conf:system/vendor/etc/izat.conf \
+    $(LOCAL_PATH)/gps/etc/lowi.conf:system/vendor/etc/lowi.conf \
+    $(LOCAL_PATH)/gps/etc/sap.conf:system/vendor/etc/sap.conf \
+    $(LOCAL_PATH)/gps/etc/xtwifi.conf:system/vendor/etc/xtwifi.conf \
+    $(LOCAL_PATH)/gps/etc/cacert_location.pem:system/vendor/etc/cacert_location.pem
+
 # health
 PRODUCT_PACKAGES += \
     android.hardware.health@1.0-convert \
