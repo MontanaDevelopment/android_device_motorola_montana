@@ -218,8 +218,7 @@ include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Shim
-TARGET_LD_SHIM_LIBS := $(TARGET_LD_SHIM_LIBS_DEVICE)
-TARGET_LD_SHIM_LIBS += \
+TARGET_LD_SHIM_LIBS := \
     /system/vendor/bin/adspd|libshim_adsp.so \
     /system/vendor/lib64/libmdmcutback.so|libqsap_shim.so
 
