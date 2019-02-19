@@ -231,6 +231,9 @@ persist.data.df.mux_count=8
 persist.data.df.iwlan_mux=9 
 persist.data.df.dev_name=rmnet_usb0
 
+# SafetyNet
+ro.build.version.security_patch=2018-12-01
+
 # Sensors
 ro.hardware.sensors=montana
 
