@@ -25,6 +25,10 @@ $(call inherit-product, device/motorola/montana/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/aosp/config/common.mk)
 
+# Inherit APN info from device
+PRODUCT_COPY_FILES += \
+    device/motorola/montana/configs/apns-conf.xml:system/etc/apns-conf.xml
+
 # Boot animation
 TARGET_SCREEN_WIDTH := 1080
 TARGET_SCREEN_HEIGHT := 1920
