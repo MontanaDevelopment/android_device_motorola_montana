@@ -45,7 +45,6 @@ BOARD_KERNEL_LZ4C_DT := true
 TARGET_KERNEL_CONFIG := montana_defconfig
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237
 BOARD_KERNEL_CMDLINE += ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 vmalloc=350M
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 BOARD_KERNEL_PAGESIZE := 2048
@@ -108,6 +107,7 @@ endif
 TARGET_NO_RPC := true
 USE_DEVICE_SPECIFIC_GPS := true
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
+
 
 # Audio
 AUDIO_FEATURE_ENABLED_ALAC_OFFLOAD := true
@@ -220,10 +220,32 @@ LZMA_RAMDISK_TARGETS := recovery
 # RIL
 TARGET_RIL_VARIANT := caf
 
+<<<<<<< HEAD
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
 
 # Shim
+=======
+# SELinux
+include device/qcom/sepolicy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+
+# Sensor
+BOARD_USES_MOT_SENSOR_HUB := true
+BOARD_USES_CAP_SENSOR_SX9310 := true
+MOT_SENSOR_HUB_HW_TYPE_L0 := true
+MOT_AP_SENSOR_HW_REARPROX := true
+MOT_AP_SENSOR_HW_REARPROX_2 := true
+MOT_SENSOR_HUB_HW_AK09912 := true
+MOT_SENSOR_HUB_HW_BMI160 := true
+MOT_SENSOR_HUB_FEATURE_CHOPCHOP := true
+MOT_SENSOR_HUB_FEATURE_LIFT := true
+MOT_SENSOR_HUB_FEATURE_PEDO := true
+MOT_SENSOR_HUB_FEATURE_LA := true
+MOT_SENSOR_HUB_FEATURE_GR := true
+
+# Shims
+>>>>>>> 04d7528... Initial commit for Enforcing SELinux
 TARGET_LD_SHIM_LIBS := \
     /system/vendor/bin/adspd|libshim_adsp.so \
     /system/vendor/lib/libmmcamera_ppeiscore.so|libshim_camera.so \

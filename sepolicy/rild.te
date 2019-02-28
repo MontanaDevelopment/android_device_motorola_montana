@@ -17,3 +17,8 @@ allow rild cutback_data_file:sock_file create_file_perms;
 allow rild rild_exec:file execute_no_trans;
 
 allow rild fwk_sensor_hwservice:hwservice_manager find;
+
+allow rild default_android_hwservice:hwservice_manager add;
+allow rild default_android_service:service_manager find;
+allow rild fwk_sensor_hwservice:hwservice_manager find;
+allow rild proc:file read;
