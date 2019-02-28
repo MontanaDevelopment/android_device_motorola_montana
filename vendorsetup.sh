@@ -1,6 +1,5 @@
-#!/bin/bash
 #
-# Copyright (C) 2017 The LineageOS Project
+# Copyright 2019 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,12 +14,4 @@
 # limitations under the License.
 #
 
-set -e
-
-export DEVICE=montana
-export DEVICE_COMMON=msm8937
-export VENDOR=motorola
-
-export DEVICE_BRINGUP_YEAR=2018
-
-./../../$VENDOR/$DEVICE_COMMON/setup-makefiles.sh $@
+add_lunch_combo lineage_montana-userdebug
