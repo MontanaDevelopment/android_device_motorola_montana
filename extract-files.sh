@@ -15,8 +15,8 @@
 # limitations under the License.
 #
 export DEVICE=montana
+export DEVICE_COMMON=msm8937
 export VENDOR=motorola
-
 export DEVICE_BRINGUP_YEAR=2018
 
 set -e
@@ -62,3 +62,4 @@ extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
 extract "$MY_DIR"/proprietary-files64.txt "$SRC" "$SECTION"
 
 "$MY_DIR"/setup-makefiles.sh
+./../../$VENDOR/$DEVICE_COMMON/extract-files.sh $@

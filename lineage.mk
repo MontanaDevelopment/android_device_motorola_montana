@@ -34,7 +34,7 @@ PRODUCT_DEVICE := montana
 PRODUCT_NAME := lineage_montana
 PRODUCT_BRAND := motorola
 PRODUCT_MANUFACTURER := motorola
-PRODUCT_MODEL := Moto G5s
+PRODUCT_MODEL := Moto G5S
 
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
@@ -42,7 +42,7 @@ PRODUCT_ENFORCE_RRO_TARGETS := \
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.model
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME="Moto G5s"
+    PRODUCT_NAME="Moto G5S"
 
 # for specific
 $(call inherit-product, vendor/motorola/montana/montana-vendor.mk)
