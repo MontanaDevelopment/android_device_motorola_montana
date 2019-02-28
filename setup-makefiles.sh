@@ -18,9 +18,8 @@
 set -e
 
 export DEVICE=montana
-export DEVICE_COMMON=msm8953-common
+export DEVICE_COMMON=msm8937
 export VENDOR=motorola
-
 export DEVICE_BRINGUP_YEAR=2018
 
 INITIAL_COPYRIGHT_YEAR="$DEVICE_BRINGUP_YEAR"
@@ -52,4 +51,4 @@ write_makefiles "$MY_DIR"/proprietary-files64.txt
 
 # We are done!
 write_footers
-
+./../../$VENDOR/$DEVICE_COMMON/setup-makefiles.sh $@
