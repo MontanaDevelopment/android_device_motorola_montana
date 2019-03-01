@@ -39,7 +39,7 @@ PRODUCT_DEVICE := montana
 PRODUCT_NAME := aosp_montana
 PRODUCT_BRAND := motorola
 PRODUCT_MANUFACTURER := motorola
-PRODUCT_MODEL := Moto G5s
+PRODUCT_MODEL := Moto G5S
 
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
