@@ -46,16 +46,12 @@ PRODUCT_ENFORCE_RRO_TARGETS := \
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.model
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-<<<<<<< HEAD:lineage_montana.mk
     PRODUCT_NAME="montana"
     TARGET_NAME="montana"
     PRIVATE_BUILD_DESC="montana-userdebug 8.1.0 OPM7.181205.001 0fc62393eb release-keys"
 
 # Get BUILD_FINGERPRINT value
 BUILD_FINGERPRINT := "motorola/montana/montana:8.1.0/OPM7.181205.001/0fc62393eb:userdebug/release-keys"
-=======
-    PRODUCT_NAME="Moto G5S"
->>>>>>> 3851731... Change kernel to MSM8937 and capitalize S in Moto G5S:lineage.mk
 
 # for specific
 $(call inherit-product, vendor/motorola/montana/Montana-vendor.mk)
