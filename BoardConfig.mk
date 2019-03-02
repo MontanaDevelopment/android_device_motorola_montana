@@ -34,6 +34,54 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno505
 TARGET_BOOTLOADER_BOARD_NAME := MSM8937
 TARGET_NO_BOOTLOADER := true
 
+# Asserts
+TARGET_OTA_ASSERT_DEVICE := montana,montana_retail
+
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_montana
+TARGET_RECOVERY_DEVICE_MODULES := libinit_montana
+
+# Kernel
+BOARD_KERNEL_LZ4C_DT := true
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-android-4.9/bin
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-androidkernel-
+TARGET_KERNEL_CONFIG := montana_defconfig
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237
+BOARD_KERNEL_CMDLINE += ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 vmalloc=350M
+BOARD_KERNEL_BASE := 0x80000000
+BOARD_KERNEL_IMAGE_NAME := Image.gz
+BOARD_KERNEL_PAGESIZE := 2048
+BOARD_KERNEL_SEPARATED_DT := true
+TARGET_CUSTOM_DTBTOOL := dtbTool_custom
+BOARD_DTBTOOL_ARGS := --force-v3 --motorola 1
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_HEADER_ARCH := arm64
+TARGET_KERNEL_SOURCE := kernel/motorola/msm8937
+#TARGET_KERNEL_CLANG_COMPILE := true
+#TARGET_USE_SDCLANG := true
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-android-4.9/bin
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-androidkernel-
+
+# Manifest
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifest.xml
+DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/configs/compatibility_matrix.xml
+
+# Partitions
+BOARD_FLASH_BLOCK_SIZE := 131072
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16879616    #    16484 * 1024 mmcblk0p38
+BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456      #   262144 * 1024 mmcblk0p52
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3623878656    #  3538944 * 1024 mmcblk0p53
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 26403126272 # 25784303 * 1024 mmcblk0p54
+
+# SELinux
+include device/qcom/sepolicy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+
+# AIDs and CAPS
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
