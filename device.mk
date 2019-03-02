@@ -21,7 +21,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-lineage
-	
+
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
@@ -401,7 +401,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_cfg.ini
 
-# TEMP FIX
+# HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.manager@1.0
