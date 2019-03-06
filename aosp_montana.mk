@@ -52,7 +52,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="montana-userdebug 8.1.0 OPM7.181205.001 0fc62393eb release-keys"
 
 # Get BUILD_FINGERPRINT value
-BUILD_FINGERPRINT := "motorola/montana/montana:8.1.0/OPM7.181205.001/0fc62393eb:userdebug/release-keys"
+BUILD_FINGERPRINT := "google/walleye/walleye:9/PQ1A.190105.004/5148680:user/release-keys"
 
 # for specific
 $(call inherit-product, vendor/motorola/montana/Montana-vendor.mk)
