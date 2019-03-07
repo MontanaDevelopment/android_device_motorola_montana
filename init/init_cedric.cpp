@@ -77,7 +77,7 @@ void vendor_load_properties()
 
     // sku
     std::string sku = android::base::GetProperty("ro.boot.hardware.sku", "");
-    property_override_dual("ro.product.model", "ro.vendor.product.model", sku.c_str());
+    property_override_dual("ro.product.model", "ro.vendor.product.model", "Moto G5");
 
     // fingerprint
     property_override("ro.build.description", "cedric-8.1/OPPS28.85-13-2/2:user/release-keys");
