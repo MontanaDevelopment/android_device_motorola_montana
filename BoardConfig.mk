@@ -166,6 +166,8 @@ TARGET_EXFAT_DRIVER := exfat
 
 # FM
 BOARD_HAVE_QCOM_FM := true
+BOARD_HAVE_FM_RADIO := true
+TARGET_QCOM_NO_FM_FIRMWARE := true
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_cedric
