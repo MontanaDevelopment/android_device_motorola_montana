@@ -2,15 +2,18 @@
   {
     "remote": "pixel",
     "repository": "packages_resources_MotoActions",
-    "target_path": "packages/resources/MotoActions"
+    "target_path": "packages/resources/MotoActions",
+    "branch": "pie"
   },
   {
     "repository": "kernel_motorola_msm8937",
     "target_path": "kernel/motorola/msm8937"
   },
   {
-    "repository": "vendor_motorola_montana",
-    "target_path": "vendor/motorola/montana"
+    "remote": "github",
+    "repository": "montanadevelopment/proprietary_vendor_motorola_montana",
+    "target_path": "vendor/motorola/montana",
+    "branch": "staging/pie-caf"
   },
   {
     "remote": "gitlab",

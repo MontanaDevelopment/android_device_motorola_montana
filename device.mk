@@ -253,10 +253,7 @@ PRODUCT_COPY_FILES += \
 # IMS
 PRODUCT_PACKAGES += \
     ims-ext-common \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
+    qti-telephony-common
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -482,3 +479,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 PRODUCT_VENDOR_KERNEL_HEADERS := hardware/qcom/msm8996/kernel-headers
+
+# Performance
+include vendor/qcom/common/qti-vendor.mk
