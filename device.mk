@@ -224,11 +224,6 @@ PRODUCT_PACKAGES += \
     android.hidl.manager@1.0 \
     android.hidl.manager-V1.0-java
 
-# IPACM
-PRODUCT_PACKAGES += \
-    ipacm \
-    IPACM_cfg.xml
-
 # IRSC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:system/vendor/etc/sec_config
@@ -254,10 +249,7 @@ PRODUCT_COPY_FILES += \
 # IMS
 PRODUCT_PACKAGES += \
     ims-ext-common \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
+    qti-telephony-common
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -479,3 +471,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 PRODUCT_VENDOR_KERNEL_HEADERS := hardware/qcom/msm8996/kernel-headers
+
+# Performance
+include vendor/qcom/common/qti-vendor.mk
