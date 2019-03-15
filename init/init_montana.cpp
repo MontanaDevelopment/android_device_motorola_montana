@@ -80,8 +80,8 @@ void vendor_load_properties()
     property_override_dual("ro.product.model", "ro.vendor.product.model", sku.c_str());
 
     // fingerprint
-    property_override("ro.build.description", "montana-8.1.0/OPM7.181205.001/0fc62393eb:userdebug/release-keys");
-    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "motorola/montana/montana:8.1.0/OPM7.181205.001/0fc62393eb:userdebug/release-keys");
+    property_override("ro.build.description", "montana-8.1.0/OPM7.190201.001/0fc62393eb:userdebug/release-keys");
+    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "motorola/montana/montana:8.1.0/OPM7.190201.001/0fc62393eb:userdebug/release-keys");
 
     // rmt_storage
     std::string device = android::base::GetProperty("ro.boot.device", "");
