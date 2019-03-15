@@ -1,7 +1,21 @@
 [
-  {
-    "repository":  "android_kernel_motorola_msm8937",
-    "target_path": "kernel/motorola/msm8937"
+  { 
+    "remote":      "github",
+    "repository":  "montanadevelopment/android_device_motorola_montana",
+    "target_path": "device/motorola/montana",
+    "branch":      "aex-6.x"
+  },
+  { 
+    "remote":      "github",
+    "repository":  "montanadevelopment/android_vendor_motorola_montana",
+    "target_path": "vendor/motorola/montana",
+    "branch":      "lineage-16.0"
+  },
+  { 
+    "remote":      "github",
+    "repository":  "montanadevelopment/android_kernel_motorola_msm8937",
+    "target_path": "kernel/motorola/msm8937",
+    "branch":      "lineage-16.0"
   },
   {
     "repository": "android_system_qcom",
