@@ -261,3 +261,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.at_library=libqti-at.so \
     ro.vendor.gt_library=libqti-gt.so
 
+# Extra stuff
+PRODUCT_PROPERTY_OVERRIDES += \
+    qemu.hw.mainkeys=0
