@@ -1,0 +1,20 @@
+[
+  { 
+    "remote":      "github",
+    "repository":  "montanadevelopment/android_device_motorola_montana",
+    "target_path": "device/motorola/montana",
+    "branch":      "twrp-7.1"
+  },
+  {
+    "remote":      "github",
+    "repository":  "LineageOS/android_device_qcom_common",
+    "target_path": "device/qcom/common",
+    "branch":      "cm-14.1"
+  },
+  {
+    "remote":      "github",
+    "repository":  "moto8937/android_kernel_motorola_msm8937",
+    "target_path": "device/motorola/msm8937",
+    "branch":      "cm-14.1"
+  },
+]
