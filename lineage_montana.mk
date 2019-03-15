@@ -44,10 +44,10 @@ PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.model
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="montana"
     TARGET_NAME="montana"
-    PRIVATE_BUILD_DESC="montana-userdebug 8.1.0 OPM7.181205.001 0fc62393eb release-keys"
+    PRIVATE_BUILD_DESC="montana-userdebug 8.1.0 OPM7.190201.001 0fc62393eb release-keys"
 
 # Get BUILD_FINGERPRINT value
-BUILD_FINGERPRINT := "motorola/montana/montana:8.1.0/OPM7.181205.001/0fc62393eb:userdebug/release-keys"
+BUILD_FINGERPRINT := "motorola/montana/montana:8.1.0/OPM7.190201.001/0fc62393eb:userdebug/release-keys"
 
 # for specific
 $(call inherit-product, vendor/motorola/montana/montana-vendor.mk)
