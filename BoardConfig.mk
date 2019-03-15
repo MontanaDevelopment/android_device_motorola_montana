@@ -240,3 +240,6 @@ WPA_SUPPLICANT_VERSION           := VER_0_8_X
 
 # inherit from the proprietary version
 -include vendor/motorola/montana/BoardConfigVendor.mk
+
+# TWRP
+TW_THEME := portrait_hdpi
