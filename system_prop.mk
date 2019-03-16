@@ -68,6 +68,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.gyro.disable=0 \
     persist.camera.HAL3.enabled=1 \
     persist.camera.eis.enable=1 \
+    camera.hal1.packagelist=org.lineageos.snap,com.motorola.cameraone \
     vidc.enc.dcvs.extra-buff-count=2 \
     vendor.vidc.enc.disable_bframes=1 \
     vendor.vidc.disable.split.mode=1 \
