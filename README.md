@@ -1,6 +1,6 @@
 Copyright (C) 2017-2019 - The LineageOS Project.
  
-Device configuration for Moto G5S (XT1792 XT1794 XT1795 XT1799-2)
+Device configuration for Moto G5S (XT1792 XT1793 XT1794 XT1795 XT1799-2)
 ===========================================
 Basic   | Spec Sheet
 -------:|:-------------------------
