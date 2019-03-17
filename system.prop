@@ -85,6 +85,7 @@ media.camera.ts.monotonic=0
 persist.camera.time.monotonic=0
 persist.camera.max.previewfps=30
 persist.camera.HAL3.enabled=1
+camera.hal1.packagelist=org.lineageos.snap,com.motorola.cameraone,com.android.camera2
 persist.camera.eis.enable=1
 
 # CNE
