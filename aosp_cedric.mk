@@ -24,6 +24,7 @@ $(call inherit-product, vendor/aosp/config/common.mk)
 # Boot animation
 TARGET_SCREEN_WIDTH := 1080
 TARGET_SCREEN_HEIGHT := 1920
+TARGET_BOOT_ANIMATION_RES := 1080
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := cedric
@@ -35,9 +36,9 @@ PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="Moto G5" \
-    PRIVATE_BUILD_DESC="cedric-7.0/NPPS25.137-72-4/4:user/release-keys"
+    PRIVATE_BUILD_DESC="cedric-8.1/OPPS28.85-16-6/6:user/release-keys"
 
-BUILD_FINGERPRINT := motorola/cedric/cedric:7.0/NPPS25.137-72-4/4:user/release-keys
+BUILD_FINGERPRINT := google/walleye/walleye:9/PQ1A.190105.004/5148680:user/release-keys
 
 export KBUILD_COMPILER_STRING=clang-9.0.1
 export USE_CCACHE=1
