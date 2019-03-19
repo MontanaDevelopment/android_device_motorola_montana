@@ -16,5 +16,5 @@
     "repository":  "moto8937/android_kernel_motorola_msm8937",
     "target_path": "device/motorola/msm8937",
     "branch":      "cm-14.1"
-  },
+  }
 ]
