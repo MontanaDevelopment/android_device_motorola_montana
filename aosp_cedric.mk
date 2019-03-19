@@ -38,7 +38,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="Moto G5" \
     PRIVATE_BUILD_DESC="cedric-8.1/OPPS28.85-16-6/6:user/release-keys"
 
-BUILD_FINGERPRINT := google/walleye/walleye:9/PQ1A.190105.004/5148680:user/release-keys
-
+BUILD_FINGERPRINT := motorola/cedric/cedric:8.1/OPPS28.85-16-6/6:user/release-keys
 export KBUILD_COMPILER_STRING=clang-9.0.1
 export USE_CCACHE=1
