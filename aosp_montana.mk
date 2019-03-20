@@ -35,7 +35,7 @@ PRODUCT_DEVICE := montana
 PRODUCT_NAME := aosp_montana
 PRODUCT_BRAND := motorola
 PRODUCT_MANUFACTURER := motorola
-PRODUCT_MODEL := Moto G5s
+PRODUCT_MODEL := Moto G5S
 
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
@@ -51,4 +51,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 BUILD_FINGERPRINT := "motorola/montana/montana:8.1.0/OPM7.190201.001/0fc62393eb:userdebug/release-keys"
 
 # for specific
-$(call inherit-product, vendor/motorola/montana/montana-vendor.mk)
+$(call inherit-product, vendor/motorola/montana/Montana-vendor.mk)
