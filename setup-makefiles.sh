@@ -18,7 +18,7 @@
 set -e
 
 export DEVICE=montana
-export DEVICE_COMMON=msm8953-common
+export DEVICE_COMMON=msm8937
 export VENDOR=motorola
 
 export DEVICE_BRINGUP_YEAR=2018
