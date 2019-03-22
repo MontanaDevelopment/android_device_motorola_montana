@@ -50,4 +50,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 BUILD_FINGERPRINT := "motorola/montana/montana:8.1.0/OPM7.190201.001/0fc62393eb:userdebug/release-keys"
 
 # for specific
-$(call inherit-product, vendor/motorola/montana/Montana-vendor.mk)
+$(call inherit-product, vendor/motorola/montana/montana-vendor.mk)
