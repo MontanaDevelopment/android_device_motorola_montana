@@ -284,7 +284,7 @@ PRODUCT_COPY_FILES +=  \
     $(LOCAL_PATH)/media/vendor/media_profiles_8956.xml:system/vendor/etc/media_profiles_8956.xml \
     $(LOCAL_PATH)/media/vendor/media_profiles_V1_0.xml:system/vendor/etc/media_profiles_V1_0.xml \
     $(LOCAL_PATH)/media/vendor/media_profiles_vendor.xml:system/vendor/etc/media_profiles_vendor.xml \
-    $(LOCAL_PATH)/media/vendor/media_codecs.xml:system/vendor/etc/media_codecs.xml \
+    $(LOCAL_PATH)/media/vendor/media_codecs_vendor.xml:system/vendor/etc/media_codecs_vendor.xml \
     $(LOCAL_PATH)/media/vendor/media_codecs_8956.xml:system/vendor/etc/media_codecs_8956.xml \
     $(LOCAL_PATH)/media/vendor/media_codecs_performance.xml:system/vendor/etc/media_codecs_performance.xml \
     $(LOCAL_PATH)/media/vendor/media_codecs_vendor_audio.xml:system/vendor/etc/media_codecs_vendor_audio.xml \
