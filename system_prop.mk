@@ -1,5 +1,5 @@
 #
-# system.prop for msm8953-common
+# system.prop for msm8937
 #
 
 # Audio
@@ -69,7 +69,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.HAL3.enabled=1 \
 persist.camera.hal1.packagelist=org.lineageos.snap,com.motorola.cameraone \
     persist.camera.eis.enable=1 \
-persist.camera.fix.hal3=16 \
     vidc.enc.dcvs.extra-buff-count=2 \
     vendor.vidc.enc.disable_bframes=1 \
     vendor.vidc.disable.split.mode=1 \
