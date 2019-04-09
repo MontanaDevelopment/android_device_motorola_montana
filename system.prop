@@ -142,6 +142,7 @@ persist.mm.sta.enable=0
 persist.vt.supported=0
 persist.volte_enabled_by_hw=1
 persist.dbg.volte_avail_ovr=1
+persist.dgb.wfc_avail_ovr=1
 ro.config.hw_volte_on=true
 
 # Media
