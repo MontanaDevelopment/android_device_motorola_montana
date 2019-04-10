@@ -1,5 +1,5 @@
 #
-# system.prop for msm8937
+# system.prop for montana
 #
 
 # Audio
