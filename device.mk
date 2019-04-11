@@ -23,6 +23,9 @@ $(call inherit-product, vendor/motorola/montana/montana-vendor.mk)
 # Build Props
 $(call inherit-product, device/motorola/montana/system_prop.mk)
 
+# Device was shipped with N MR1
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk)
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
