@@ -20,7 +20,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, vendor/motorola/montana/montana-vendor.mk)
 
 # Build Props
-$(call inherit-product, device/motorola/montana/system_prop.mk)
+$(call inherit-product, device/motorola/montana/system.prop)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
