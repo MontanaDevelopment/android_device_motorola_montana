@@ -1,6 +1,5 @@
 /*
  * Copyright (c) 2017 The LineageOS Project
- * Copyright (c) 2019 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,15 +17,15 @@
 package org.lineageos.settings.device.doze;
 
 import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
+import android.hardware.TriggerEvent;
+import android.hardware.TriggerEventListener;
 import android.util.Log;
 
 import org.lineageos.settings.device.LineageActionsSettings;
 import org.lineageos.settings.device.SensorAction;
 import org.lineageos.settings.device.SensorHelper;
 
-public class GlanceSensor implements ScreenStateNotifier, SensorEventListener {
+public class GlanceSensor implements ScreenStateNotifier {
     private static final String TAG = "LineageActions-GlanceSensor";
 
     private final LineageActionsSettings mLineageActionsSettings;
@@ -49,7 +48,7 @@ public class GlanceSensor implements ScreenStateNotifier, SensorEventListener {
     public void screenTurnedOn() {
         if (mEnabled) {
             Log.d(TAG, "Disabling");
-            mSensorHelper.unregisterListener(this);
+            mSensorHelper.cancelTriggerSensor(mSensor, mGlanceListener);
             mEnabled = false;
         }
     }
@@ -58,18 +57,17 @@ public class GlanceSensor implements ScreenStateNotifier, SensorEventListener {
     public void screenTurnedOff() {
         if (mLineageActionsSettings.isPickUpEnabled() && !mEnabled) {
             Log.d(TAG, "Enabling");
-            mSensorHelper.registerListener(mSensor, this);
+            mSensorHelper.requestTriggerSensor(mSensor, mGlanceListener);
             mEnabled = true;
         }
     }
 
-    @Override
-    public void onSensorChanged(SensorEvent event) {
-        Log.d(TAG, "triggered");
-        mSensorAction.action();
-    }
-
-    @Override
-    public void onAccuracyChanged(Sensor mSensor, int accuracy) {
-    }
+    private TriggerEventListener mGlanceListener = new TriggerEventListener() {
+        @Override
+        public void onTrigger(TriggerEvent event) {
+            Log.d(TAG, "triggered");
+            mSensorAction.action();
+            mSensorHelper.requestTriggerSensor(mSensor, mGlanceListener);
+        }
+    };
 }
