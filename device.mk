@@ -21,7 +21,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, vendor/motorola/montana/montana-vendor.mk)
 
 # Build Props
-$(call inherit-product, device/motorola/montana/system_prop.mk)
+$(call inherit-product, device/motorola/montana/system.prop)
 
 # Device was shipped with N MR1
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk)
