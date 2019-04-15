@@ -64,8 +64,8 @@ persist.camera.max.previewfps=30
 camera.mot.startup_probing=0
 persist.camera.debug.logfile=0
 persist.camera.gyro.disable=0
-persist.camera.HAL3.enabled=1
-persist.canera.eis.enable=1
+persist.camera.HAL3.enabled=0
+persist.canera.eis.enable=0
 vidc.enc.dcvs.extra-buff-count=2
 vendor.vidc.enc.disable_bframes=1
 vendor.vidc.disable.split.mode=1
@@ -76,7 +76,6 @@ vidc.dec.disable.split.cpu=1
 video.disable.ubwc=1
 media.camera.ts.monotonic=0
 persist.camera.time.monotonic=0
-persist.camera.hal1.packagelist=com.motorola.cameraone
 
 # CNE
 persist.cne.feature=1
