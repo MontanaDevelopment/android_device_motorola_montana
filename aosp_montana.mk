@@ -31,7 +31,9 @@ TARGET_SCREEN_HEIGHT := 1920
 TARGET_BOOT_ANIMATION_RES := 1080
 
 # Google Apps
-TARGET_GAPPS_ARCH :=arm64
+TARGET_GAPPS_ARCH := arm64
+IS_GO := true
+TARGET_MINIMAL_APPS := true
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := montana
