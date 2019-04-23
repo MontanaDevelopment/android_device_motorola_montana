@@ -42,6 +42,9 @@ PRODUCT_BRAND := motorola
 PRODUCT_MANUFACTURER := motorola
 PRODUCT_MODEL := Moto G5S
 
+## Ignore neverallows for now
+export SELINUX_IGNORE_NEVERALLOWS=true
+
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
 
