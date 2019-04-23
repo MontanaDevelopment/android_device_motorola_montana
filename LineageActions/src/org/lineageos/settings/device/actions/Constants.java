@@ -157,7 +157,7 @@ public class Constants {
         FP_KEY_HOLD_OFF,
         FP_KEY_RIGHT_OFF,
         FP_KEY_LEFT_OFF,
-        FP_HOME_KEY_OFF,
+        FP_HOME_KEY_OFF
     };
 
     static {
