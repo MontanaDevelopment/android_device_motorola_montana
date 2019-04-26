@@ -2,6 +2,9 @@
 # system.prop for montana
 #
 
+# Updater
+lineage.updater.uri=https://raw.githubusercontent.com/montanadevelopment/releases/master/lineage16.json
+
 # Audio
 audio.deep_buffer.media=true
 vendor.audio.offload.buffer.size.kb=64
