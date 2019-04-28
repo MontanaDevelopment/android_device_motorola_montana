@@ -78,6 +78,7 @@ PRODUCT_PACKAGES += \
     android.hardware.broadcastradio@1.0-impl
 
 PRODUCT_COPY_FILES +=  \
+    $(LOCAL_PATH)/audio/audio_tuning_mixer.txt:system/vendor/etc/audio_tuning_mixer.txt \
     $(LOCAL_PATH)/audio/audio_effects.xml:system/vendor/etc/audio_effects.xml \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:system/vendor/etc/audio_policy_configuration.xml \
     $(LOCAL_PATH)/audio/mixer_paths.xml:system/vendor/etc/mixer_paths.xml \
