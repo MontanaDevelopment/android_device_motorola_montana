@@ -77,7 +77,6 @@ vidc.dec.disable.split.cpu=1
 video.disable.ubwc=1
 media.camera.ts.monotonic=0
 persist.camera.time.monotonic=0
-persist.camera.hal1.packagelist=com.motorola.cameraone
 
 # CNE
 persist.cne.feature=1
@@ -120,7 +119,7 @@ persist.debug.wfd.enable=1
 vendor.video.disable.ubwc=1
 
 # Fingerprint
-#property to enable fingerprint
+# Property to enable fingerprint
 persist.qfp=false
 
 # FM
@@ -229,7 +228,7 @@ persist.data.df.dev_name=rmnet_usb0
 # Sensors
 ro.hardware.sensors=montana
 
-#Trim properties
+# Trim properties
 ro.vendor.qti.sys.fw.trim_enable_memory=2147483648
 
 # USB
