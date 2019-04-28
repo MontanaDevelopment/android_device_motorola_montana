@@ -246,4 +246,3 @@ ro.usb.bpteth_adb=0x2ee8
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.at_library=libqti-at.so
 ro.vendor.gt_library=libqti-gt.so
-ro.vendor.build.security_patch=2019-02-01
