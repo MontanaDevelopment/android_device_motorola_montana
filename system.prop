@@ -2,9 +2,6 @@
 # system.prop for montana
 #
 
-# Updater
-lineage.updater.uri=https://raw.githubusercontent.com/montanadevelopment/releases/master/lineage16.json
-
 # Audio
 audio.deep_buffer.media=true
 vendor.audio.offload.buffer.size.kb=64
@@ -65,8 +62,8 @@ vendor.camera.hal1.packagelist=com.instagram.android,com.whatsapp
 camera.mot.startup_probing=0
 persist.camera.debug.logfile=0
 persist.camera.gyro.disable=0
-persist.camera.HAL3.enabled=0
-persist.camera.eis.enable=0
+persist.camera.HAL3.enabled=1
+persist.camera.eis.enable=1
 vidc.enc.dcvs.extra-buff-count=2
 vendor.vidc.enc.disable_bframes=1
 vendor.vidc.disable.split.mode=1
