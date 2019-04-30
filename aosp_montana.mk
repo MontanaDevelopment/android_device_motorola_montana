@@ -29,6 +29,8 @@ $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 TARGET_SCREEN_WIDTH := 1080
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_BOOT_ANIMATION_RES := 1080
+
+# Google Apps
 TARGET_MINIMAL_APPS := TRUE
 TARGET_GAPPS_ARCH := arm64
 IS_GO := TRUE
