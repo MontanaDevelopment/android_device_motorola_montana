@@ -264,9 +264,9 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.montana \
     lights.msm8937
 
-# LineageActions
+# MotoActions
 PRODUCT_PACKAGES += \
-    LineageActions
+    MotoActions
 
 # Media
 PRODUCT_PACKAGES += \
