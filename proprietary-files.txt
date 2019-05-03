@@ -93,6 +93,7 @@ etc/firmware/cpp_firmware_v1_1_6.fw
 etc/firmware/cpp_firmware_v1_2_0.fw
 etc/firmware/cpp_firmware_v1_4_0.fw
 etc/firmware/cpp_firmware_v1_5_0.fw
+etc/firmware/cpp_firmware_v1_5_1.fw
 etc/firmware/cpp_firmware_v1_5_2.fw
 etc/firmware/cpp_firmware_v1_6_0.fw
 etc/firmware/cpp_firmware_v1_8_0.fw
@@ -109,6 +110,14 @@ etc/firmware/nvm_tlv_1.3.bin
 etc/firmware/nvm_tlv_2.1.bin
 etc/firmware/nvm_tlv_3.0.bin
 etc/firmware/nvm_tlv_3.2.bin
+etc/firmware/opalum.rx.ext.config.0
+etc/firmware/opalum.rx.ext.config.1
+etc/firmware/opalum.rx.ext.config.2
+etc/firmware/opalum.rx.ext.config.3
+etc/firmware/opalum.tx.ext.config.0
+etc/firmware/opalum.tx.ext.config.1
+etc/firmware/opalum.tx.ext.config.2
+etc/firmware/opalum.tx.ext.config.3
 etc/firmware/rampatch_tlv.img
 etc/firmware/rampatch_tlv_1.3.tlv
 etc/firmware/rampatch_tlv_2.1.tlv
