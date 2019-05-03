@@ -23,7 +23,6 @@
 -framework/izat.xt.srv.jar
 -framework/qcrilhook.jar
 -framework/qti-telephony-common.jar
--framework/qti-vzw-ims-internal.jar
 -framework/rcsimssettings.jar
 -framework/tcmclient.jar
 -priv-app/CNEService/CNEService.apk
