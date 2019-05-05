@@ -5,9 +5,7 @@
 -app/embms/embms.apk
 -app/imssettings/imssettings.apk
 -framework/ConnectivityExt.jar
--framework/QPerformance.jar
 -framework/QtiTelephonyServicelibrary.jar
--framework/UxPerformance.jar
 -framework/WfdCommon.jar
 -framework/cneapiclient.jar
 -framework/com.qti.dpmframework.jar
