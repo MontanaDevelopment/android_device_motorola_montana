@@ -13,8 +13,6 @@
 -framework/com.qti.dpmframework.jar
 -framework/com.qti.location.sdk.jar
 -framework/com.qti.snapdragon.sdk.display.jar
--framework/com.qualcomm.location.vzw_library.jar
--framework/com.qualcomm.qti.imscmservice@1.0-java.jar
 -framework/com.quicinc.cne.api-V1.0-java.jar
 -framework/com.quicinc.cne.jar
 -framework/dpmapi.jar
@@ -22,14 +20,12 @@
 -framework/imscmlibrary.jar
 -framework/izat.xt.srv.jar
 -framework/qcrilhook.jar
--framework/qti-telephony-common.jar
 -framework/rcsimssettings.jar
 -framework/tcmclient.jar
 -priv-app/CNEService/CNEService.apk
 -priv-app/HotwordEnrollmentOKGoogleCS47L35/HotwordEnrollmentOKGoogleCS47L35.apk
 -priv-app/HotwordEnrollmentTGoogleCS47L35/HotwordEnrollmentTGoogleCS47L35.apk
 -priv-app/HotwordEnrollmentXGoogleCS47L35/HotwordEnrollmentXGoogleCS47L35.apk
--priv-app/QtiTetherService/QtiTetherService.apk
 -priv-app/WfdService/WfdService.apk
 -priv-app/atfwd/atfwd.apk
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk
@@ -38,7 +34,6 @@
 -vendor/app/DTVPlayer/DTVPlayer.apk
 -vendor/app/DTVService/DTVService.apk
 -vendor/framework/qti-vzw-ims-internal.jar
--vendor/framework/vendor.qti.hardware.alarm-V1.0-java.jar
 -vendor/framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar
 bin/charge_only_mode
 bin/cnss_diag
@@ -158,6 +153,8 @@ etc/permissions/qti_libpermissions.xml
 etc/permissions/qti_permissions.xml
 etc/wfdconfig.xml
 etc/wfdconfigsink.xml
+framework/com.qualcomm.qti.imscmservice@1.0-java.jar
+framework/qti-telephony-common.jar
 lib/com.qualcomm.qti.wifidisplayhal@1.0.so
 lib/extractors/libmmparser.so
 lib/libFileMux.so
@@ -258,6 +255,7 @@ lib64/vendor.qti.hardware.iop@1.0.so
 lib64/vendor.qti.hardware.perf@1.0.so
 lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 lib64/vendor.qti.imsrtpservice@1.0.so
+priv-app/QtiTetherService/QtiTetherService.apk
 vendor/bin/ATFWD-daemon
 vendor/bin/adspd
 vendor/bin/adsprpcd
@@ -351,6 +349,7 @@ vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
 vendor/etc/xtra_root_cert.pem
 vendor/firmware/libpn548ad_fw.so
+vendor/framework/vendor.qti.hardware.alarm-V1.0-java.jar
 vendor/lib/com.fingerprints.extension@1.0_vendor.so
 vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-halimpl.so
 vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0.so
