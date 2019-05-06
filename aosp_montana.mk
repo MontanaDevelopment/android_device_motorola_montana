@@ -33,7 +33,7 @@ TARGET_BOOT_ANIMATION_RES := 1080
 # Google Apps
 TARGET_MINIMAL_APPS := TRUE
 TARGET_GAPPS_ARCH := arm64
-IS_GO := TRUE
+# IS_GO_MODE := true
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := montana
