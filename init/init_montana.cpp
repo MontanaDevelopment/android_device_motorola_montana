@@ -91,7 +91,7 @@ void vendor_load_properties()
 
     // sku
     std::string sku = android::base::GetProperty("ro.boot.hardware.sku", "");
-    property_override_dual("ro.product.model", "ro.vendor.product.model", sku.c_str());
+    property_override_dual("ro.product.model", "ro.vendor.product.model", "Moto G5S);
 
     // rmt_storage
     std::string device = android::base::GetProperty("ro.boot.device", "");
