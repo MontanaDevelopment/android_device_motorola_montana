@@ -88,11 +88,8 @@ void vendor_load_properties()
 
     if (platform != ANDROID_TARGET)
         return;
-
     // sku
     std::string sku = android::base::GetProperty("ro.boot.hardware.sku", "");
-    property_override_dual("ro.product.model", "ro.vendor.product.model", sku.c_str());
-
     // rmt_storage
     std::string device = android::base::GetProperty("ro.boot.device", "");
     std::string radio = android::base::GetProperty("ro.boot.radio", "");
@@ -105,3 +102,27 @@ void vendor_load_properties()
     num_sims();
 
 }
+// sku
+    if (sku == "XT1790") {
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "Moto G (5S) (XT1790)");
+    }
+    if (sku == "XT1791") {
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "Moto G (5S) (XT1791)");
+    }
+    if (sku == "XT1791") {
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "Moto G (5S) (XT1791)");
+    }
+    if (sku == "XT1791") {
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "Moto G (5S) (XT1791)");
+    }
+    if (sku == "XT1791") {
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "Moto G (5S) (XT1791)");
+    }
+    if (sku == "XT1791") {
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "Moto G (5S) (XT1791)");
+    }
+    if (sku == "XT1791") {
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "Moto G (5S) (XT1791)");
+    } else {
+        property_override_dual("ro.product.model", "ro.vendor.product.model", sku.c_str());
+    }
