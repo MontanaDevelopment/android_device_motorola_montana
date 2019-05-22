@@ -125,6 +125,7 @@ PRODUCT_PACKAGES += \
     android.hardware.configstore@1.0-service \
     hwcomposer.msm8937 \
     memtrack.msm8937 \
+    libdrm_vendor \
     libgenlock \
     libtinyxml \
     libdisplayconfig \
@@ -137,7 +138,8 @@ PRODUCT_PACKAGES += \
 # Display Calibration
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service-sdm \
-    vendor.lineage.livedisplay@2.0-service-sysfs
+    vendor.lineage.livedisplay@2.0-service-sysfs \
+    vendor.lineage.livedisplay@2.0_vendor
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -284,7 +286,9 @@ PRODUCT_PACKAGES += \
     SecureElement \
     Tag \
     com.android.nfc_extras \
-    android.hardware.nfc@1.1-service
+    android.hardware.nfc@1.1-service \
+    vendor.nxp.nxpese@1.0_vendor \
+    vendor.nxp.nxpnfc@1.0_vendor
 
 # NFC Configuration
 PRODUCT_COPY_FILES += \
@@ -310,7 +314,8 @@ PRODUCT_COPY_FILES += \
 
 # Power HAL
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.1-service-qti
+    android.hardware.power@1.1-service-qti \
+    vendor.lineage.power@1.0_vendor
 
 # Powerhint configuration file
 PRODUCT_COPY_FILES += \
@@ -388,11 +393,13 @@ PRODUCT_PACKAGES += \
 
 # Touch HAL
 PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.montana
+    vendor.lineage.touch@1.0-service.montana \
+    vendor.lineage.touch@1.0_vendor
 
 # Trust HAL
 PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
+    vendor.lineage.trust@1.0-service \
+    vendor.lineage.trust@1.0_vendor
 
 # USB HAL
 PRODUCT_PACKAGES += \

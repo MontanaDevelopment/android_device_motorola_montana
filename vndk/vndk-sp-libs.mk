@@ -37,4 +37,11 @@ EXTRA_VENDOR_LIBRARIES := \
     vendor.display.config@1.1 \
     vendor.display.config@1.2 \
     vendor.nxp.nxpnfc@1.0 \
-    vendor.qti.hardware.camera.device@1.0
+    vendor.qti.hardware.camera.device@1.0 \
+    vendor.lineage.touch@1.0 \
+    vendor.lineage.power@1.0 \
+    vendor.lineage.trust@1.0 \
+    vendor.lineage.livedisplay@2.0 \
+    vendor.nxp.nxpese@1.0 \
+    vendor.nxp.nxpnfc@1.0 \
+    libdrm
