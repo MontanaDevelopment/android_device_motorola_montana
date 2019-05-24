@@ -15,5 +15,11 @@
     "repository": "montanadevelopment/proprietary_vendor_motorola_montana",
     "target_path": "vendor/motorola/montana",
     "branch": "staging/pie"
+  },
+  {
+    "remote": "gitlab",
+    "repository": "montanadevelopment/android_device_motorola_montana_Camera",
+    "target_path": "device/motorola/montana/Camera",
+    "branch": "master"
   }
 ]
