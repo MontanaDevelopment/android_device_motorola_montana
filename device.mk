@@ -108,7 +108,8 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     libbson \
-    Camera2 \
+    Snap \
+    OpenCamera \
     camera.device@1.0-impl \
     camera.device@3.2-impl \
     libgpu_mapper_shim \
@@ -116,9 +117,6 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.device@1.0_vendor
-
-#PRODUCT_PACKAGES += \
-#    OpenCamera
 
 # Camera Configurations
 PRODUCT_COPY_FILES += \
