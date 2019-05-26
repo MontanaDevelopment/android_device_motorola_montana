@@ -17,10 +17,10 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Proprietary
-$(call inherit-product, vendor/motorola/montana/montana-vendor.mk)
+$(call inherit-product, vendor/motorola/hannah/hannah-vendor.mk)
 
 # Build Props
-$(call inherit-product, device/motorola/montana/system.prop)
+$(call inherit-product, device/motorola/hannah/system.prop)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
@@ -121,9 +121,9 @@ PRODUCT_PACKAGES += \
 
 # Camera Configurations
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/camera/msm8937_mot_montana_camera.xml:system/etc/camera/msm8937_mot_montana_camera.xml \
-    $(LOCAL_PATH)/configs/camera/mot_ov5695_l5695f60_chromatix.xml:system/etc/camera/mot_ov5695_l5695f60_chromatix.xml \
-    $(LOCAL_PATH)/configs/camera/s5k3p3_chromatix.xml:system/etc/camera/s5k3p3_chromatix.xml
+    $(LOCAL_PATH)/configs/camera/msm8937_mot_hannah_camera.xml:system/etc/camera/msm8937_mot_hannah_camera.xml \
+    $(LOCAL_PATH)/configs/camera/ov12a10_hannah_chromatix.xml:system/etc/camera/ov12a10_hannah_chromatix.xml \
+    $(LOCAL_PATH)/configs/camera/mot_s5k4h7_hannah_chromatix.xml:system/etc/camera/mot_s5k4h7_hannah_chromatix.xml
 
 # Display
 PRODUCT_PACKAGES += \
@@ -418,7 +418,7 @@ PRODUCT_PACKAGES += \
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
-    android.hardware.vibrator@1.0-service.montana
+    android.hardware.vibrator@1.0-service.hannah
 
 PRODUCT_PACKAGES += \
     vndk-sp
