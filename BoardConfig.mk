@@ -16,7 +16,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-DEVICE_PATH := device/motorola/montana
+DEVICE_PATH := device/motorola/hannah
 
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
@@ -50,7 +50,7 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 TARGET_USES_64_BIT_BINDER := true
 
 # Asserts
-TARGET_OTA_ASSERT_DEVICE := montana,montana_retail
+TARGET_OTA_ASSERT_DEVICE := hannah,hannah_t,rhannah
 
 # Enable dexpreopt to speed boot time
 ifeq ($(HOST_OS),linux)
@@ -68,12 +68,12 @@ USE_DEVICE_SPECIFIC_GPS := true
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_montana
-TARGET_RECOVERY_DEVICE_MODULES := libinit_montana
+TARGET_INIT_VENDOR_LIB := libinit_hannah
+TARGET_RECOVERY_DEVICE_MODULES := libinit_hannah
 
 # Kernel
 BOARD_KERNEL_LZ4C_DT := true
-TARGET_KERNEL_CONFIG := montana_defconfig
+TARGET_KERNEL_CONFIG := hannah_defconfig
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237
 BOARD_KERNEL_CMDLINE += ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 vmalloc=350M
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
@@ -254,4 +254,4 @@ WIFI_DRIVER_FW_PATH_P2P          := "p2p"
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
 
 # inherit from the proprietary version
--include vendor/motorola/montana/BoardConfigVendor.mk
+-include vendor/motorola/hannah/BoardConfigVendor.mk
