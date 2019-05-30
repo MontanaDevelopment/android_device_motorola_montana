@@ -111,9 +111,7 @@ etc/permissions/qti-vzw-ims-internal.xml
 etc/permissions/qti_libpermissions.xml
 etc/permissions/qti_permissions.xml
 -framework/ConnectivityExt.jar
--framework/QPerformance.jar
 -framework/QtiTelephonyServicelibrary.jar
--framework/UxPerformance.jar
 -framework/WfdCommon.jar
 -framework/cneapiclient.jar
 framework/com.qualcomm.qti.imscmservice@1.0-java.jar
