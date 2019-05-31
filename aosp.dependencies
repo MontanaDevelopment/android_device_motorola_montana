@@ -7,13 +7,12 @@
   },
   {
     "repository": "kernel_motorola_msm8937",
-    "target_path": "kernel/motorola/msm8937"
+    "target_path": "kernel/motorola/msm8937",
+    "branch": "pie-montana"
   },
   {
-    "remote": "github",
-    "repository": "montanadevelopment/proprietary_vendor_motorola_montana",
-    "target_path": "vendor/motorola/montana",
-    "branch": "staging/pie-caf"
+    "repository": "vendor_motorola_montana",
+    "target_path": "vendor/motorola/montana"
   },
   {
     "remote": "gitlab",
