@@ -46,11 +46,11 @@ PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="blueline-user 9 PQ3A.190505.002 5450365 release-keys"
+    PRIVATE_BUILD_DESC="blueline-user 9 PQ3A.190605.003 5524043 release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := google/blueline/blueline:9/PQ3A.190505.002/5450365:user/release-keys
-VENDOR_BUILD_FINGERPRINT := google/blueline/blueline:9/PQ3A.190505.002/5450365:user/release-keys
+BUILD_FINGERPRINT := google/blueline/blueline:9/PQ3A.190605.003/5524043:user/release-keys__2019-06-05
+VENDOR_BUILD_FINGERPRINT := google/blueline/blueline:9/PQ3A.190605.003/5524043:user/release-keys__2019-06-05
 
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.model
 
