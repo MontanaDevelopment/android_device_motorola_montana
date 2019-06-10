@@ -107,8 +107,6 @@ void vendor_load_properties()
     property_override_dual("ro.product.model", "ro.vendor.product.model", "Moto G5S (XT1796)");
     } else if (sku == "XT1797") {
     property_override_dual("ro.product.model", "ro.vendor.product.model", "Moto G5S (XT1797)");
-    } else if (sku == "XT1799-2") {
-    property_override_dual("ro.product.model", "ro.vendor.product.model", "Moto G5S (XT1799-2)");
     }
     // rmt_storage
     std::string device = android::base::GetProperty("ro.boot.device", "");
