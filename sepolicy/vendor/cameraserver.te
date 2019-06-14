@@ -1,8 +1,6 @@
 binder_call(cameraserver, servicemanager);
 
-allow cameraserver nfc_vendor_data_file:dir search;
 allow cameraserver nfc_vendor_data_file:fifo_file write;
-allow cameraserver nfc_vendor_data_file:fifo_file open;
 
 allow cameraserver sensorservice_service:service_manager { find };
 allow cameraserver system_file:dir { read open };
@@ -21,8 +19,6 @@ allow cameraserver mnt_user_file:dir r_dir_perms;
 allow cameraserver mnt_user_file:lnk_file r_file_perms;
 allow cameraserver media_rw_data_file:dir { open read search write add_name };
 allow cameraserver media_rw_data_file:file { create read write open };
-
-allow cameraserver sysfs:file { open write };
 
 allow cameraserver cameraserver:process { execmem };
 
@@ -50,7 +46,7 @@ allow cameraserver system_file:file execute;
 
 allow cameraserver debugfs:dir { read open };
 
-allow cameraserver nfc_vendor_data_file:file { open write };
+allow cameraserver nfc_vendor_data_file:file { write };
 allow cameraserver socket_device:sock_file write;
 
 allow cameraserver hal_perf_default:binder call;
