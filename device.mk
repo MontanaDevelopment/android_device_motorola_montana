@@ -109,7 +109,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libbson \
     Snap \
-    OpenCamera \
+    GoogleCamera \
     camera.device@1.0-impl \
     camera.device@3.2-impl \
     libgpu_mapper_shim \
