@@ -347,4 +347,7 @@
            <item>com.moto.actions.KeyHandler</item>
        </string-array>
 
+    <!-- Whether or not to use Night Light -->
+    <bool name="config_nightDisplayAvailable">true</bool>
+
 </resources>
