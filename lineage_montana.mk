@@ -44,7 +44,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
 BUILD_FINGERPRINT := motorola/montana_retail/montana:8.1.0/OPPS28.65-37-7-4/1dd5:user/release-keys
-VENDOR_BUILD_FINGERPRINT := motorola/montana_retail/montana:8.1.0/OPPS28.65-37-7-4/1dd5:user/release-keys
 
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.model
 
