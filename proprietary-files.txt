@@ -43,10 +43,10 @@ framework/qti-telephony-common.jar|b1953a3599255f08f1785c677d22810f65e0167b
 -vendor/framework/qti-vzw-ims-internal.jar
 
 # Time Service - from griffin
-bin/move_time_data.sh
+bin/move_time_data.sh|b7708daa5ce0401eb548f2fad6b2e260c5c545cd
 -vendor/app/TimeService/TimeService.apk|2cdac463ea1e295cf1c3ae08974c37cad2c9f784
 vendor/bin/time_daemon|e7f801aeb814ac2760b0bfa57a3261e0c415a16d
-vendor/lib/libtime_genoff.so
+vendor/lib/libtime_genoff.so|b24eb6563980cd05296b60e73cc3a970d1336357
 vendor/lib64/libtime_genoff.so|63bc574e88ccea12fcb8872a229e407f12307083
 
 # Wi-Fi Display
