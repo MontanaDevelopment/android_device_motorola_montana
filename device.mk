@@ -333,7 +333,7 @@ PRODUCT_COPY_FILES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    init.qcom.fm.sh \
+    init.qcom.ril.sh \
     init.mmi.boot.sh \
     init.mmi.laser.sh \
     wlan_carrier_bin.sh
@@ -344,7 +344,7 @@ PRODUCT_PACKAGES += \
     init.montana.rc \
     init.mmi.usb.rc \
     init.qcom.rc \
-	ueventd.qcom.rc
+    ueventd.qcom.rc
 
 # Releasetools script
 PRODUCT_COPY_FILES += \
