@@ -18,6 +18,10 @@
 lib64/libaptXHD_encoder.so|c4ad4d6d7615f7df3ea1a4be5c6dae8a8c8ee8b1
 lib64/libaptX_encoder.so|22f5749edb5099526788c22708099a7791dd837f
 
+# Display Calibration
+vendor/etc/qdcm_calib_data_mipi_mot_vid_inx_1080p_521.xml
+vendor/etc/qdcm_calib_data_mipi_mot_vid_tianma_1080p_521.xml
+
 # Frameworks
 -framework/cneapiclient.jar
 -framework/com.qti.dpmframework.jar
