@@ -33,5 +33,5 @@ LOCAL_C_FLAGS := -Wno-error
 LOCAL_HEADER_LIBRARIES := libutils_headers
 LOCAL_MODULE := libqsap_shim
 LOCAL_MODULE_TAGS := optional
-LOCAL_PROPRIETARY_MODULE := true
+LOCAL_VENDOR_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
