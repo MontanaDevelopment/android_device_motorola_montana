@@ -43,7 +43,7 @@ setup_vendor "${DEVICE}" "${VENDOR}" "${LINEAGE_ROOT}"
 write_headers
 
 # The standard common blobs
-write_makefiles "${MY_DIR}/proprietary-files.txt" false
+write_makefiles "${MY_DIR}/proprietary-files.txt" true
 
 cat << EOF >> "$ANDROIDMK"
 EOF
