@@ -24,10 +24,6 @@ etc/camera/msm8937_mot_montana_camera.xml
 etc/camera/s5k3p3_chromatix.xml
 etc/external_camera_config.xml
 
-# Display Calibration
-vendor/etc/qdcm_calib_data_mipi_mot_vid_inx_1080p_521.xml
-vendor/etc/qdcm_calib_data_mipi_mot_vid_tianma_1080p_521.xml
-
 # Frameworks
 -framework/cneapiclient.jar
 -framework/com.qti.dpmframework.jar
