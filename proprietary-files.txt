@@ -107,6 +107,7 @@ bin/ipacm-diag
 bin/perfservice
 bin/ptt_socket_app
 bin/radish
+bin/wcnss_filter
 etc/acdbdata/Bluetooth_cal.acdb
 etc/acdbdata/General_cal.acdb
 etc/acdbdata/Global_cal.acdb
