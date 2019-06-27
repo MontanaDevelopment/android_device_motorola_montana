@@ -19,10 +19,10 @@ lib64/libaptXHD_encoder.so|c4ad4d6d7615f7df3ea1a4be5c6dae8a8c8ee8b1
 lib64/libaptX_encoder.so|22f5749edb5099526788c22708099a7791dd837f
 
 # Camera configurations
-etc/camera/mot_ov5695_l5695f60_chromatix.xml
-etc/camera/msm8937_mot_montana_camera.xml
-etc/camera/s5k3p3_chromatix.xml
-etc/external_camera_config.xml
+etc/camera/mot_ov5695_l5695f60_chromatix.xml:vendor/etc/camera/mot_ov5695_l5695f60_chromatix.xml
+etc/camera/msm8937_mot_montana_camera.xml:vendor/etc/camera/msm8937_mot_montana_camera.xml
+etc/camera/s5k3p3_chromatix.xml:vendor/etc/camera/s5k3p3_chromatix.xml
+etc/external_camera_config.xml:vendor/etc/external_camera_config.xml
 
 # Frameworks
 -framework/cneapiclient.jar
