@@ -331,6 +331,11 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     ueventd.qcom.rc
 
+# Recovery
+PRODUCT_PACKAGES += \
+    init.recovery.qcom.rc \
+    init.recovery.usb.rc
+
 # Releasetools script
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/check_features.sh:system/vendor/bin/check_features.sh
