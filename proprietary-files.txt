@@ -774,6 +774,7 @@ vendor/lib/libflash_wd3100.so
 vendor/lib/libflp.so
 vendor/lib/libgdtap.so
 vendor/lib/libgeofence.so
+vendor/lib/libgps.utils.so|0b82a83b564cc4dc3bd30fdc4a76e800259260d7
 vendor/lib/libgralloc1.so
 vendor/lib/libgsl.so
 vendor/lib/libguy.so
@@ -796,9 +797,12 @@ vendor/lib/libllvm-glnext.so
 vendor/lib/libllvm-qcom.so
 vendor/lib/libllvm-qgl.so
 vendor/lib/libloc_api_v02.so
+vendor/lib/libloc_core.so|84e644114f34f2ba9aa58d8e6717c3d1ca31238d
 vendor/lib/libloc_ds_api.so
 vendor/lib/libloc_ext.so
 vendor/lib/libloc_externalDr.so
+vendor/lib/libloc_pla.so|2ea4bb215035a16b1a238356905ebccf2202c98c
+vendor/lib/libloc_stub.so|7c46e2fee45ac46544a68882d323ab7fa0585d47
 vendor/lib/liblocationservice.so
 vendor/lib/liblocationservice_glue.so
 vendor/lib/liblowi_client.so
@@ -1193,6 +1197,7 @@ vendor/lib64/libfeedbackhandler.so
 vendor/lib64/libflp.so
 vendor/lib64/libgdtap.so
 vendor/lib64/libgeofence.so
+vendor/lib64/libgps.utils.so|c819f569b9eacdf33b2cee576d67e803b572d4c9
 vendor/lib64/libgpustats.so
 vendor/lib64/libgsl.so
 vendor/lib64/libhdcpsrm.so
@@ -1209,8 +1214,11 @@ vendor/lib64/libllvm-glnext.so
 vendor/lib64/libllvm-qcom.so
 vendor/lib64/libllvm-qgl.so
 vendor/lib64/libloc_api_v02.so
+vendor/lib64/libloc_core.so|63b3fc2dfe5efa145ac3478d6da8900bf7ce2ba9
 vendor/lib64/libloc_ds_api.so
 vendor/lib64/libloc_externalDr.so
+vendor/lib64/libloc_pla.so|35652e54ebb85f772c4a899d78bb1d2d86c0cf18
+vendor/lib64/libloc_stub.so|000476ba5ffb1b144da159b035c96b43b505940b
 vendor/lib64/liblocationservice.so
 vendor/lib64/liblocationservice_glue.so
 vendor/lib64/liblowi_client.so
