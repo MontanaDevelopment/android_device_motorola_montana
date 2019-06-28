@@ -278,7 +278,7 @@ vendor/bin/sensors.qcom
 vendor/bin/slim_daemon
 vendor/bin/ssr_setup
 vendor/bin/tftp_server
-vendor/bin/thermal-engine
+vendor/bin/thermal-engine|0f351362d9d56345227faef0754fc7422313d2a5
 vendor/bin/xtra-daemon
 vendor/bin/xtwifi-client
 vendor/bin/xtwifi-inet-agent
@@ -1009,7 +1009,7 @@ vendor/lib/libsmemlog.so
 vendor/lib/libssd.so
 vendor/lib/libsubsystem_control.so
 vendor/lib/libsystem_health_mon.so
-vendor/lib/libthermalclient.so
+vendor/lib/libthermalclient.so|b3f341f3f674d15950ca9574c5811df7b2f2f185
 vendor/lib/libthermalioctl.so
 vendor/lib/libtinyxml2_1.so
 vendor/lib/libtrueportrait.so
@@ -1285,7 +1285,7 @@ vendor/lib64/libsmemlog.so
 vendor/lib64/libssd.so
 vendor/lib64/libsubsystem_control.so
 vendor/lib64/libsystem_health_mon.so
-vendor/lib64/libthermalclient.so
+vendor/lib64/libthermalclient.so|2e53f7e4c8213c60684975c7685038bdb06a6ccc
 vendor/lib64/libthermalioctl.so
 vendor/lib64/libtinyxml2_1.so
 vendor/lib64/libulp2.so
