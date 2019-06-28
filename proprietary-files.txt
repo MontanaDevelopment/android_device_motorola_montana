@@ -177,14 +177,7 @@ etc/firmware/rampatch_tlv_1.3.tlv
 etc/firmware/rampatch_tlv_2.1.tlv
 etc/firmware/rampatch_tlv_3.0.tlv
 etc/firmware/rampatch_tlv_3.2.tlv
-#etc/firmware/synaptics-boe-potter-16112102-25d862-potter.tdat
-#etc/firmware/synaptics-boe-s3203b-16112102-25d862-potter.tdat
 etc/firmware/synaptics-inx-s3603r-17042001-27111d-montana.tdat
-#etc/firmware/synaptics-s3508-16082601-255c40-addison.tdat
-#etc/firmware/synaptics-s3508sga-16082601-255c40-addison.tdat
-#etc/firmware/synaptics-s3508sga-16103104-255c40-albus.tdat
-#etc/firmware/synaptics-tianma-potter-17011001-237533-potter.tdat
-#etc/firmware/synaptics-tianma-s3203b-17011001-237533-potter.tdat
 etc/firmware/synaptics-tianma-s3603r-17041102-27111d-montana.tdat
 etc/firmware/upd-00000126-00001001-fed70128-fffe0001-02.tftf
 etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
