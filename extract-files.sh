@@ -90,6 +90,9 @@ function blob_fixup() {
         patchelf --add-needed libbinder-v27.so "${2}"
         ;;
 
+    vendor/etc/init/hw/android.hardware.bluetooth\@1.0-service-qti.rc)
+        sed -i 's|/system/vendor/bin/hw|/vendor/bin/hw|g' "${2}"
+        ;;
     esac
 }
 
