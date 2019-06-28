@@ -278,7 +278,7 @@ vendor/bin/sensors.qcom
 vendor/bin/slim_daemon
 vendor/bin/ssr_setup
 vendor/bin/tftp_server
-vendor/bin/thermal-engine|0f351362d9d56345227faef0754fc7422313d2a5
+vendor/bin/thermal-engine|3a91a9ac34913af76c6a0776e171c1cdc987b44d
 vendor/bin/xtra-daemon
 vendor/bin/xtwifi-client
 vendor/bin/xtwifi-inet-agent
