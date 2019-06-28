@@ -224,7 +224,6 @@ lib/vendor.qti.hardware.qdutils_disp@1.0.so
 lib64/libaptXHD_encoder.so
 lib64/libaptX_encoder.so
 lib64/liblocationservice_jni.so:vendor/lib64/liblocationservice_jni.so
-lib64/libperipheral_client.so:vendor/lib64/libperipheral_client.so
 lib64/libsdm-disp-apis.so
 lib64/libxt_native.so
 lib64/vendor.display.color@1.0.so
@@ -268,7 +267,7 @@ vendor/bin/mm-pp-dpps
 vendor/bin/mm-qcamera-daemon
 vendor/bin/netmgrd
 vendor/bin/pm-proxy
-vendor/bin/pm-service
+vendor/bin/pm-service|af6ada29839bdbfcfacd9b2d86b2c23151d2aa47
 vendor/bin/qmi_motext_hook
 vendor/bin/qseecomd
 vendor/bin/qseeproxydaemon
@@ -948,7 +947,7 @@ vendor/lib/liboemcrypto.so
 vendor/lib/libomx-dts.so
 vendor/lib/liboptizoom.so
 vendor/lib/libpanelmode.so
-vendor/lib/libperipheral_client.so
+vendor/lib/libperipheral_client.so|6ed0a7a09744afb4024d46a5e1b3ad78e80d16ea
 vendor/lib/libprotobuf-cpp-biss.so
 vendor/lib/libprotobuf-cpp-lpro.so
 vendor/lib/libprotobuf-cpp-shit.so
@@ -1225,6 +1224,7 @@ vendor/lib64/libmotext_inf.so
 vendor/lib64/libnetmgr.so
 vendor/lib64/liboemcrypto.so
 vendor/lib64/libperfgluelayer.so
+vendor/lib64/libperipheral_client.so|0f18ac70f4982c07b51e6a63d3aef0c17b36a242
 vendor/lib64/libq3dtools_adreno.so
 vendor/lib64/libqcci_legacy.so
 vendor/lib64/libqcmaputils.so
