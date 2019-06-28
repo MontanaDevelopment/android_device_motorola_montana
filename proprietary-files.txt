@@ -1079,6 +1079,8 @@ vendor/lib/vendor.qti.hardware.perf@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so
 vendor/lib/vendor.qti.hardware.radio.atcmdfwd@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.sensorscalibrate@1.0.so
+vendor/lib/vndk/libbinder.so
+vendor/lib/vndk-sp/libcutils.so
 vendor/lib64/android.hardware.gatekeeper@1.0-impl-qti.so
 vendor/lib64/com.qualcomm.qti.bluetooth_audio@1.0.so
 vendor/lib64/com.qualcomm.qti.imscmservice@1.0_vendor.so
