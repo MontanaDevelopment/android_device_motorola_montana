@@ -25,6 +25,10 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+on init
+    # Suppress Android system internal error
+    setprop ro.treble.enabled false
+
 on property:ro.boot.radio=EMEA && on property:ro.boot.radio=APAC
     # NFC & e-compass
     setprop ro.hw.nfc true
