@@ -86,6 +86,10 @@ function blob_fixup() {
         sed -i 's|/system/framework/qcrilhook.jar|/vendor/framework/qcrilhook.jar|g' "${2}"
         ;;
 
+    vendor/bin/ims_rtp_daemon)
+        patchelf --add-needed libbinder-v27.so "${2}"
+        ;;
+
     esac
 }
 
