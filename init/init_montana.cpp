@@ -95,6 +95,10 @@ void vendor_load_properties()
     property_override("ro.product.device", "montana");
     property_override("ro.product.name", "montana_retail");
 
+    // fingerprint
+    property_override("ro.build.fingerprint", "motorola/montana_retail/montana:8.1.0/OPPS28.65-37-7-4/1dd5:user/release-keys");
+    property_override("ro.build.description", "montana_retail-user 8.1.0 OPPS28.65-37-7-4 1dd5 release-keys");
+
     // sku
     std::string sku = "Moto G5S (";
     sku.append(android::base::GetProperty("ro.boot.hardware.sku", ""));
