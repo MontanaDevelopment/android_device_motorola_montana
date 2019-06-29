@@ -36,3 +36,4 @@ allow mm-qcamerad fwk_sensor_hwservice:hwservice_manager find;
 binder_call(mm-qcamerad, system_server)
 
 allow mm-qcamerad sysfs:file { open read };
+allow mm-qcamerad adspd_prop:file { read open getattr };

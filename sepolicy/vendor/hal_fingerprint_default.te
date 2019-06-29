@@ -11,9 +11,8 @@ allow hal_fingerprint_default sysfs_leds:file r_file_perms;
 allow hal_fingerprint_default uhid_device:chr_file rw_file_perms;
 allow hal_fingerprint_default sysfs:file rw_file_perms;
 
-
 allow hal_fingerprint_default fpc_data_file:file { append };
-allow hal_fingerprint_default fps_data_file:file { append };
+allow hal_fingerprint_default fps_data_file:file { append getattr };
 
 # Add com.fingerprints.extension::IFingerprint* service to hwservicemanager
 add_hwservice(hal_fingerprint_default, fpc_extension_service)
