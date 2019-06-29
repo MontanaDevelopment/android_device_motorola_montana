@@ -14,3 +14,5 @@ allow system_app sysfs_screen_off_gestures:file { getattr open write };
 get_prop(system_app, diag_prop);
 binder_call(system_app, qtitetherservice_service);
 binder_call(system_app, wificond);
+allow system_app proc_pagetypeinfo:file read;
+allow system_app sysfs_zram:dir search;
