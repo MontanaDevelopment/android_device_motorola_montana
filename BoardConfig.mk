@@ -183,6 +183,10 @@ TARGET_COPY_OUT_VENDOR := vendor
 TARGET_EXFAT_DRIVER := exfat
 PRODUCT_VENDOR_MOVE_ENABLED := true
 
+BOARD_ROOT_EXTRA_SYMLINKS := /vendor/dsp:/dsp
+BOARD_ROOT_EXTRA_SYMLINKS += /vendor/firmware_mnt:/firmware
+BOARD_ROOT_EXTRA_SYMLINKS += /persist:/pds
+
 # Peripheral manager
 TARGET_PER_MGR_ENABLED := true
 
