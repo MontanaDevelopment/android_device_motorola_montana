@@ -11,7 +11,7 @@ LOCAL_PRIVATE_PLATFORM_APIS := true
 LOCAL_USE_AAPT2 := true
 LOCAL_PRIVILEGED_MODULE := true
 
-LOCAL_STATIC_JAVA_LIBRARIES := \
+LOCAL_STATIC_ANDROID_LIBRARIES := \
     android-support-v14-preference \
     android-support-v7-appcompat \
     android-support-v7-preference \
@@ -22,11 +22,7 @@ LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
 LOCAL_RESOURCE_DIR := \
     $(LOCAL_PATH)/res \
-    $(LOCAL_PATH)/../../../../packages/resources/devicesettings/res \
-    frameworks/support/v14/preference/res \
-    frameworks/support/v7/appcompat/res \
-    frameworks/support/v7/preference/res \
-    frameworks/support/v7/recyclerview/res
+    $(TOP)/packages/resources/devicesettings/res \
 
 LOCAL_PROGUARD_ENABLED := disabled
 LOCAL_DEX_PREOPT := false
