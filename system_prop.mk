@@ -240,7 +240,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.qmi.adb_logmask=0 \
     persist.data.netmgrd.qos.enable=true \
     persist.data.mode=concurrent \
-    persist.data.iwlan.enable=true
+    persist.data.iwlan.enable=true \
+    persist.radio.aosp_usr_pref_sel=true
 
 # RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
